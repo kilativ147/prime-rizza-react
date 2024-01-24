@@ -6,7 +6,14 @@ import Form from '../../form/Form'
 
 const About = () => {
 	return (
-		<div>
+		<div
+			style={{
+				height: '100%',
+				display: 'flex',
+				flexDirection: 'column',
+				justifyContent: 'space-between',
+			}}
+		>
 			<section className={s.about}>
 				<article className={s.about__greatings}>
 					<div className={s.about__backimage}>
