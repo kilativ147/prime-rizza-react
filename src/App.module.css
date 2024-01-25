@@ -29,7 +29,9 @@ body._lock {
 }
 
 [class*='__container'] {
-  width: clamp(320px, 98vw, var(--mw_page));
+  position: relative;
+	height: 100%;
+	width: clamp(320px, 98vw, var(--mw_page));
   margin: 0 auto;
 }
 /*@ Основні кнопки та виділення активних сторінок в шапці */

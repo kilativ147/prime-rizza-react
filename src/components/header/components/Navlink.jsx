@@ -5,7 +5,7 @@ const Navlink = ({ link, children }) => {
 	return (
 		<NavLink
 			to={link}
-			className={({ isActive }) => (isActive ? s.header__link_active : s.header__link_active)}
+			className={s.header__link}
 		>
 			{children}
 		</NavLink>

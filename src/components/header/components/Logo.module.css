@@ -1,0 +1,7 @@
+.header__logo {
+	position: absolute;
+	inset: 0;
+	display: grid;
+	place-items: center;
+  z-index: -1;
+}

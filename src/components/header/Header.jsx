@@ -1,24 +1,21 @@
 import LogoImg from '../../img/Logo.png'
-import s from './Header.css'
+import s from './Header.module.css'
 import NavBar from './components/NavBar'
 import Logo from './components/Logo'
 import Contacts from './components/Contacts'
+import Burger from './components/Burger'
 
 const Header = () => {
 	return (
-		<header class='header'>
-			<div class='header__container'>
-				{/* <a href='#' class='header__logo-mob'>
-					<img src={LogoImg} alt="Prime Pizza"/>
-				</a> */}
-				<div onclick='inizializeBurger()' class='header__burger'>
-					<span></span>
+		<header className={s.header}>
+			<div className='header__container'>
+				<div className={s.header__content}>
+					<NavBar />
+					<div></div>
+					<Contacts />
 				</div>
-				<div class='header__content'>
-					<NavBar/>
-					<Logo/>
-					<Contacts/>
-				</div>
+				<Logo />
+				<Burger />
 			</div>
 		</header>
 	)
