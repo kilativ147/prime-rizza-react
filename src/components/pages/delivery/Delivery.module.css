@@ -7,7 +7,7 @@
 	padding-bottom: 100px;
 }
 
-.delivery__rules,
+.delivery__rules h2,
 .delivery__pays h2 {
 	font-weight: 700;
 	font-size: 36px;
@@ -22,22 +22,19 @@
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 	grid-gap: 50px;
 }
-.delivery__rule,
-.delivery__pay {
+.delivery__rule {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-.rule__top,
-.pay__top {
+.rule__top {
 	position: relative;
 	height: 120px;
 	display: flex;
 	align-items: center;
 	margin-bottom: 20px;
 }
-.rule__top_back,
-.pay__top_back {
+.rule__top_back {
 	position: absolute;
 	width: 120px;
 	height: 120px;
@@ -48,31 +45,28 @@
 	z-index: -1;
 	background-color: #eceff5b2;
 }
-
-.rule__top_img,
 .rule__top_img {
 	width: 100%;
 	height: 100%;
 	padding: 5px;
 }
-.rule__top_img,
+.rule__top_payimg {
+	position: relative;
+	transform: translateX(-40px);
+}
 .rule__top_img img {
 	width: 100%;
 	height: 100%;
 }
-
-.rule-green {
-	background: linear-gradient(92.06deg, #2ec674 3.15%, #9de73e 96.53%);
+.rule__text_green {
+	background: linear-gradient(92.06deg, #2EC674 3.15%, #9DE73E 96.53%);
 }
-
-.rule-yellow {
+.rule__text_yellow {
 	background: linear-gradient(180deg, rgba(198, 182, 46, 1) 0%, rgba(227, 231, 62, 1) 100%);
 }
-
-.rule-red {
+.rule__text_red {
 	background: linear-gradient(92.06deg, #ff7347 3.15%, #fd9a06 96.53%);
 }
-
 .rule__top_text {
 	align-self: end;
 	font-weight: 700;
@@ -89,23 +83,17 @@
 
 	text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
 }
-
-.delivery__rule,
-.delivery__pay p b {
+.rule__title {
 	display: block;
 	font-size: 24px;
 	margin-bottom: 15px;
+	font-weight: 700;
+	text-align: center;
 }
-.delivery__rule,
-.delivery__pay p {
+.rule__subtitle {
 	font-size: 20px;
 	line-height: 150%;
 	/* 36/24 */
 
 	text-align: center;
-}
-
-.rule__top_img {
-	position: relative;
-	transform: translateX(-40px);
 }

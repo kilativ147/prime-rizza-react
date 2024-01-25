@@ -13,8 +13,8 @@ const Delivery = () => {
 				justifyContent: 'space-between',
 			}}
 		>
-			<section className='delivety__container'>
-				<div className='delivery__content'>
+			<section className='delivery__container'>
+				<div className={s.delivery__content}>
 					<DeliveryList />
 					<PaymentList/>
 				</div>

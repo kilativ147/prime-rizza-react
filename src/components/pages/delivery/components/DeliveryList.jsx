@@ -11,21 +11,21 @@ const DeliveryList = () => {
 			title: '20хв',
 			text: 'У "зелену зону" - від 20 хвилин',
 			description: 'Безкоштовна доставка від 3 піц',
-			color: 'linear-gradient(92.06deg, #2EC674 3.15%, #9DE73E 96.53%)',
+			color: 'green',
 		},
 		{
 			img: img40Min,
 			title: '40хв',
 			text: 'У "жовту зону" - від 40 хвилин',
 			description: 'Безкоштовна доставка від 4 піц',
-			color: 'linear-gradient(92.06deg, #2EC674 3.15%, #9DE73E 96.53%)',
+			color: 'yellow',
 		},
 		{
 			img: img60Min,
-			title: '60хв',
+			title: 'red',
 			text: 'У "червону зону" - від 60 хвилин',
 			description: 'Безкоштовна доставка від 5 піц',
-			color: 'linear-gradient(92.06deg, #2EC674 3.15%, #9DE73E 96.53%)',
+			color: 'red',
 		},
 	]
 
@@ -36,6 +36,7 @@ const DeliveryList = () => {
 				title={item.title}
 				text={item.text}
 				description={item.description}
+				color={item.color}
 			/>
 		))
 	}
@@ -43,7 +44,7 @@ const DeliveryList = () => {
 	return (
 		<article className={s.delivery__rules}>
 			<h2>
-				<strong>Правила доставки</strong>
+				Правила доставки
 			</h2>
 			<div className={s.delivery__rules_flex}>
 				<DeliveryItems />

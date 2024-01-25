@@ -2,6 +2,7 @@ import './Variables.css'
 import { Routes, Route } from 'react-router-dom'
 import s from './App.module.css'
 import Header from './components/header/Header'
+import ScrollToTop from './hooks/ScrollToTop';
 import MainPage from './components/pages/main/MainPage'
 import Promotional from './components/pages/promotional/Promotional'
 import Delivery from './components/pages/delivery/Delivery'
@@ -13,6 +14,7 @@ const App = () => {
 		<div className={s.wraper}>
 			<Header />
 			<main class={s.main}>
+					<ScrollToTop />
 				<Routes>
 					<Route path='/' element={<MainPage />} />
 					<Route path='/promotional' element={<Promotional />} />

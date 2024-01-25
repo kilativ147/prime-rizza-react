@@ -120,6 +120,9 @@ a {
 	padding: 5px 20px;
 	white-space: nowrap;
 }
+.header__content a[aria-current="page"] {
+  color: red; /* Змініть "red" на бажаний колір */
+}
 .header__content:hover {
 	/*! @extend %button_bk; */
 }

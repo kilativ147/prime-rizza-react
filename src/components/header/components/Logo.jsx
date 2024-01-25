@@ -1,11 +1,12 @@
 //import s from './Logo.module.css'
-import LogoImg from '../../../img/Logo.png'
+import imgLogo from '../../../img/Logo.png'
+import { NavLink } from 'react-router-dom'
 
 const Logo = () => {
-  return (
-		<a href='#' class='header__logo'>
-			<img src={LogoImg} alt='Prime Pizza' />
-		</a>
+	return (
+		<NavLink to={'/'}>
+			<img src={imgLogo} alt='' />
+		</NavLink>
 	)
 }
 

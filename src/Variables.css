@@ -1,6 +1,7 @@
 body {
 	--mw_page: 1300px;
 	--color: linear-gradient(92.06deg, #ffdb47 3.15%, #fdcc06 96.53%);
+	--mob_width: 800px;
 }
 
 /*@ Основні кнопки та виділення активних сторінок в шапці */

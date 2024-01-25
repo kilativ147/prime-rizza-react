@@ -1,36 +1,42 @@
-//import s from './PaymentList.module.css'
+import s from '../Delivery.module.css'
+import imgCash from '../../../../img/svg/MoneyCash.svg'
+import imgCard from '../../../../img/svg/MoneyCard.svg'
+
+import DeliveryItem from './DeliveryItem'
 
 const PaymentList = () => {
+	const items = [
+		{
+			img: imgCash,
+			text: 'Готівка',
+			description: 'вкажіть розрахунок без решти',
+		},
+		{
+			img: imgCard,
+			text: 'Карта',
+			description: 'Розрахунки картою проводяться через термінал який кур\'єр буде мати з собою',
+			color: 'yellow',
+		}
+	]
+
+	const DeliveryItems = () => {
+		return items.map((item) => (
+			<DeliveryItem
+				img={item.img}
+				text={item.text}
+				description={item.description}
+				isPay
+			/>
+		))
+	}
+
 	return (
-		<article className='delivery__pays'>
+		<article className={s.delivery__rules}>
 			<h2>
-				<strong>Правила оплати</strong>
+				Правила оплати
 			</h2>
-			<div className='delivery__pays-flex animation-show'>
-				<div className='delivery__pay'>
-					<div className='pay__top'>
-						<div className='pay__top-back' />
-						<div className='rule__top-img'>
-							<img src='img/delivery/money_cash.svg' alt='cash' />
-						</div>
-					</div>
-					<p>
-						<b>Готівка</b>
-					</p>
-					<p>вкажіть розрахунок без решти</p>
-				</div>
-				<div className='delivery__pay'>
-					<div className='pay__top'>
-						<div className='pay__top-back' />
-						<div className='rule__top-img'>
-							<img src='img/delivery/money_card.svg' alt='cash' />
-						</div>
-					</div>
-					<p>
-						<b>Карта</b>
-					</p>
-					<p>Розрахунки картою проводяться через термінал який кур'єр буде мати з собою</p>
-				</div>
+			<div className={s.delivery__rules_flex}>
+				<DeliveryItems />
 			</div>
 		</article>
 	)
