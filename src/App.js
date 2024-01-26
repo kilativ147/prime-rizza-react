@@ -1,6 +1,5 @@
-import './Variables.css'
+import './App.css'
 import { Routes, Route } from 'react-router-dom'
-import s from './App.module.css'
 import Header from './components/header/Header'
 import ScrollToTop from './hooks/ScrollToTop';
 import MainPage from './components/pages/main/MainPage'
@@ -11,9 +10,9 @@ import Footer from './components/footer/Footer'
 
 const App = () => {
 	return (
-		<div className={s.wraper}>
+		<div className='wraper'>
 			<Header />
-			<main class={s.main}>
+			<main class='main'>
 					<ScrollToTop />
 				<Routes>
 					<Route path='/' element={<MainPage />} />

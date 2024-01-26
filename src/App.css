@@ -1,7 +1,20 @@
-/* body {
+body {
 	--mw_page: 1300px;
 	--color: linear-gradient(92.06deg, #ffdb47 3.15%, #fdcc06 96.53%);
-} */
+	--mob_width: 800px;
+	
+	--button_radius: 50px;
+	--button_padding: 5px 20px;
+}
+
+/*@ Основні кнопки та виділення активних сторінок в шапці */
+.mixin_button_bk {
+	background: var(--color);
+	border-radius: var(--button_radius);
+	padding: var(--button_padding);
+}
+
+
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -11,20 +24,15 @@ body {
 	line-height: 150%; /* 24/16 */
 	color: #262626;
 }
-body._lock {
-  overflow: hidden !important;
-}
 
 .wraper {
 	position: relative;
-	/* overflow: hidden; */
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
 }
 .main {
-	/* відступ від шапки */
-	margin-top: 100px;
+	margin-top: 100px; /* відступ від шапки */
 	flex: 1 1 auto;
 }
 
@@ -33,10 +41,4 @@ body._lock {
 	height: 100%;
 	width: clamp(320px, 98vw, var(--mw_page));
   margin: 0 auto;
-}
-/*@ Основні кнопки та виділення активних сторінок в шапці */
-.mixin_button_bk {
-  background: linear-gradient(92.06deg, #FFDB47 3.15%, #FDCC06 96.53%);
-  border-radius: 50px;
-  padding: 5px 20px;
 }

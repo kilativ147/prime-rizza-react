@@ -3,6 +3,7 @@
 	display: grid;
 	text-align: center;
 	grid-template-columns: repeat(3, auto);
+	place-self: end;
 	place-items: center;
 	gap: 5px;
 }
@@ -47,4 +48,22 @@
 	opacity: 1;
 	translate: 0 50%;
 	border-radius: var(--button_radius);
+}
+
+@media (max-width: 800px){
+.header__nav {
+	height: fit-content;
+		padding-right: 30px;
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+	}
+	.header__link {
+		font-size: 32px;
+		line-height: 130%;
+		position: relative;
+		transition: all 0.3s ease;
+	padding: 25px 40px;
+	}
+	
 }

@@ -1,14 +1,16 @@
-//import s from './Contacts.module.css'
+import s from './Contacts.module.css'
+import imgSchedule from '../../../img/svg/HeaderTime.svg'
+import imgTel from '../../../img/svg/HeaderPhone.svg'
 
 const Contacts = () => {
   return (
-		<address class='header__adress'>
-			<div class='header__worktime'>
-				{/* <img src="img/icons/header_time.svg" alt="Робочий час"/> */}
+		<address class={s.header__adress}>
+			<div class={s.header__worktime}>
+				<img src={imgSchedule} alt="Робочий час"/>
 				<p>Кожного дня 10:00 - 22:00</p>
 			</div>
 			<div class='header__phone'>
-				{/* <img src="img/icons/header_phone.svg" alt="Телефон"/> */}
+				<img src={imgTel} alt="Телефон"/>
 				<a href='tel:0670090209'>+38 (067) 009 02 09</a>
 			</div>
 		</address>
