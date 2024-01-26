@@ -1,0 +1,22 @@
+.index{
+  display: flex;
+  flex-direction: column;
+}
+/* .index article {
+  flex: 1 1 auto;
+  height: 250px;
+} */
+.index section{
+  flex: 1 1 auto;
+}
+
+
+
+
+
+
+
+.main__container {
+  padding: 0px 10px;
+  position: relative;
+  }
