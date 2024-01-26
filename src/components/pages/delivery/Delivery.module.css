@@ -1,3 +1,9 @@
+.delivery {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
 .delivery__content {
 	color: #262626;
 	padding: 70px 20px;
@@ -59,7 +65,7 @@
 	height: 100%;
 }
 .rule__text_green {
-	background: linear-gradient(92.06deg, #2EC674 3.15%, #9DE73E 96.53%);
+	background: linear-gradient(92.06deg, #2ec674 3.15%, #9de73e 96.53%);
 }
 .rule__text_yellow {
 	background: linear-gradient(180deg, rgba(198, 182, 46, 1) 0%, rgba(227, 231, 62, 1) 100%);

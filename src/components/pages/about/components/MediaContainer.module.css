@@ -1,10 +1,11 @@
 .about__media {
-	position: relative;
-	/* bottom: 0; */
+	/* height: fit-content; */
+
+	position: absolute;
+	bottom: 0;
 	left: 50%;
-	translate: -50% -0%;
-	margin-top: -1000px;
-	margin-bottom: 70px;
+	translate: -50% 50%;
+	
 	max-width: 90%;
 	display: flex;
 	justify-content: center;

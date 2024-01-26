@@ -5,18 +5,11 @@ import PaymentList from './components/PaymentList'
 
 const Delivery = () => {
 	return (
-		<div
-			style={{
-				height: '100%',
-				display: 'flex',
-				flexDirection: 'column',
-				justifyContent: 'space-between',
-			}}
-		>
+		<div className={s.delivery}>
 			<section className='delivery__container'>
 				<div className={s.delivery__content}>
 					<DeliveryList />
-					<PaymentList/>
+					<PaymentList />
 				</div>
 			</section>
 			<Form />
