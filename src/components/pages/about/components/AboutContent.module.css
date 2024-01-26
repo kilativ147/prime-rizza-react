@@ -1,5 +1,7 @@
 .about__container {
 	padding: 0px 20px;
+	height: fit-content;
+
 }
 .about__content_flex {
 	display: flex;

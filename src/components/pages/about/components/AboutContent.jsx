@@ -36,7 +36,7 @@ const AboutContent = () => {
 	}
 
 	return (
-		<section className={s.about__container}>
+		<section className={s.about__container + ' ' + "about__container"}>
 			<div className={s.about__content_flex}>
 				<ContentItems/>
 				

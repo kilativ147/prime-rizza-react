@@ -19,8 +19,8 @@ const About = () => {
 					<div className={s.about__backimage}>
 						<img src={GreatingsImage} alt='Prime Pizza Image' />
 					</div>
+					<MediaContainer />
 				</article>
-				<MediaContainer />
 				<AboutContent />
 			</section>
 			<Form />
