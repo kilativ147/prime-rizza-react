@@ -1,12 +1,19 @@
 import s from './NavBar.module.css'
 import Navlink from './Navlink'
 
-const NavBar = () => {
+const NavBar = ({ handleMenuState }) => {
+	// let navClassName = menuState ? s.header__nav_active : s.header__nav
 	return (
 		<nav class={s.header__nav}>
-			<Navlink link={'/promotional'}>Акції</Navlink>
-			<Navlink link={'/delivery'}>Доставка</Navlink>
-			<Navlink link={'/about'}>Про нас</Navlink>
+			<Navlink link={'/promotional'} handleMenuState={handleMenuState}>
+				Акції
+			</Navlink>
+			<Navlink link={'/delivery'} handleMenuState={handleMenuState}>
+				Доставка
+			</Navlink>
+			<Navlink link={'/about'} handleMenuState={handleMenuState}>
+				Про нас
+			</Navlink>
 		</nav>
 	)
 }

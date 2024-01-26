@@ -1,0 +1,44 @@
+body {
+	--mw_page: 1300px;
+	--color: linear-gradient(92.06deg, #ffdb47 3.15%, #fdcc06 96.53%);
+	--mob_width: 800px;
+	
+	--button_radius: 50px;
+	--button_padding: 5px 20px;
+}
+
+/*@ Основні кнопки та виділення активних сторінок в шапці */
+.mixin_button_bk {
+	background: var(--color);
+	border-radius: var(--button_radius);
+	padding: var(--button_padding);
+}
+
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	height: 100%;
+	font-size: 16px;
+	line-height: 150%; /* 24/16 */
+	color: #262626;
+}
+
+.wraper {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+.main {
+	margin-top: 100px; /* відступ від шапки */
+	flex: 1 1 auto;
+}
+
+[class*='__container'] {
+  position: relative;
+	height: 100%;
+	width: clamp(320px, 98vw, var(--mw_page));
+  margin: 0 auto;
+}
