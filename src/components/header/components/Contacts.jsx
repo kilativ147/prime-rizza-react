@@ -4,12 +4,12 @@ import imgTel from '../../../img/svg/HeaderPhone.svg'
 
 const Contacts = () => {
   return (
-		<address class={s.header__adress}>
-			<div class={s.header__worktime}>
+		<address className={s.header__adress}>
+			<div className={s.header__worktime}>
 				<img src={imgSchedule} alt="Робочий час"/>
 				<p>Кожного дня 10:00 - 22:00</p>
 			</div>
-			<div class='header__phone'>
+			<div className={s.header__phone}>
 				<img src={imgTel} alt="Телефон"/>
 				<a href='tel:0670090209'>+38 (067) 009 02 09</a>
 			</div>

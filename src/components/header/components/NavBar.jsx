@@ -1,19 +1,21 @@
 import s from './NavBar.module.css'
-import Navlink from './Navlink'
+import { NavLink } from 'react-router-dom'
 
 const NavBar = ({ handleMenuState }) => {
-	// let navClassName = menuState ? s.header__nav_active : s.header__nav
+	const handleClick = () => {
+		handleMenuState(false)
+	}
 	return (
-		<nav class={s.header__nav}>
-			<Navlink link={'/promotional'} handleMenuState={handleMenuState}>
+		<nav className={s.header__nav}>
+			<NavLink to='/promotional' className={s.header__link} onClick={handleClick}>
 				Акції
-			</Navlink>
-			<Navlink link={'/delivery'} handleMenuState={handleMenuState}>
+			</NavLink>
+			<NavLink to='/delivery' className={s.header__link} onClick={handleClick}>
 				Доставка
-			</Navlink>
-			<Navlink link={'/about'} handleMenuState={handleMenuState}>
-				Про нас
-			</Navlink>
+			</NavLink>
+			<NavLink to='/about' className={s.header__link} onClick={handleClick}>
+				Доставка
+			</NavLink>
 		</nav>
 	)
 }

@@ -1,27 +1,28 @@
-//import s from './Products.module.css'
+import s from './Products.module.scss'
+
+import { Outlet } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const Products = () => {
-  return (
-		<article className='products'>
-			<div className='products__category'>
-				<a className='products__category-button _activeButton'>Піца</a>
-				<a className='products__category-button'>Салат</a>
-				<a className='products__category-button'>Напої</a>
-				<a className='products__category-button'>Інше</a>
+	return (
+		<article className={s.products}>
+			<div className={s.products__category}>
+				<NavLink to='/' exact className={s.products__category_button}>
+					Піца
+				</NavLink>
+				<NavLink to='/salad' className={s.products__category_button}>
+					Салати
+				</NavLink>
+				<NavLink to='/drinks' className={s.products__category_button}>
+					Напої
+				</NavLink>
+				<NavLink to='/other' className={s.products__category_button}>
+					Інше
+				</NavLink>
 			</div>
-			<div className='products__list animation-show'>
-				<div id='pizza' className='product__body '>
-					<div className='product__items-grid' />
-				</div>
-				<div id='salad' className='product__body '>
-					<div className='product__items-grid' />
-				</div>
-				<div id='drinks' className='product__body '>
-					<div className='product__items-grid' />
-				</div>
-				<div id='other' className='product__body '>
-					<div className='product__items-grid' />
-				</div>
+
+			<div className={s.products__items}>
+				<Outlet />
 			</div>
 		</article>
 	)

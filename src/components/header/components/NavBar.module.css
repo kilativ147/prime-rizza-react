@@ -3,7 +3,7 @@
 	display: grid;
 	text-align: center;
 	grid-template-columns: repeat(3, auto);
-	place-self: end;
+	place-self: center;
 	place-items: center;
 	gap: 5px;
 }

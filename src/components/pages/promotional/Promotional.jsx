@@ -36,10 +36,7 @@ const Promotional = () => {
 	const PromotionalList = () => {
 		return items.map((item) => (
 			<PromotionalItem
-				img={item.img}
-				title={item.title}
-				text={item.text}
-				textWarning={item.textWarning}
+			 {...item}
 			/>
 		))
 	}

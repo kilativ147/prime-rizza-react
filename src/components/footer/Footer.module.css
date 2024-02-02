@@ -92,6 +92,10 @@ a {
 	display: flex;
 	gap: 10px;
 }
+.footer__address > div p {
+	flex: 1 1 auto;
+	text-wrap: nowrap;
+}
 
 @media (max-width: 800px) {
 	.footer__bottom {
