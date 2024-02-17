@@ -10,29 +10,30 @@
 	&__back {
 		position: absolute;
 		z-index: -1;
-		width: 98vw;
+		width: 100%;
+		// width: 98vw;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 	}
 	&__back_flex {
 		display: flex;
-		gap: 0px;
+		gap: 2px;
 		overflow: hidden;
 	}
 	&__back_img {
 		position: relative;
 		height: 250px;
-		// aspect-ratio: 1;
+		aspect-ratio: 1;
 		background-color: rgba(0, 0, 0, 0.65);
-		animation: moveLeft 10s linear infinite;
+		animation: moveLeft 20s linear infinite;
 
 		@keyframes moveLeft {
 			0% {
 				translate: 0px 0px;
 			}
-			100% {
-				translate: calc(-250px * 7) 0px;
+			50% {
+				translate: calc(-250px * 6) 0px;
 			}
 		}
 		img {
@@ -44,48 +45,37 @@
 	}
 }
 .label {
-	padding: 16px 25px;
-	background: var(--color);
-	opacity: 0.95;
-	border-radius: 12px;
+	width: clamp(250px, 50%, 500px);
+	position: relative;
+	padding: 60px 70px;
+	outline: 1px solid #fff;
+	outline-offset: -25px;
 
-	@media (max-width: 500px) {
-		padding: 8px 10px;
-	}
-
-	&__border {
-		border: 1px solid #fff;
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		background: var(--color);
 		border-radius: 12px;
-		padding: 50px 60px;
-
-		@media (max-width: 600px) {
-			padding: 15px 20px;
-		}
+		opacity: 0.85;
 	}
-	&__content {
+	a {
 		display: flex;
+		justify-content: center;
 		align-items: center;
-		gap: 20px;
+		flex-wrap: wrap;
+		column-gap: 15px;
+		row-gap: 5px;
 
-		@media (max-width: 500px) {
-			gap: 10px;
-		}
+		font-weight: 700;
+		font-size: 36px;
+		font-size: clamp(24px, 4vw, 36px);
+		line-height: 136.111111%; /* 49/36 */
+		color: #fff;
 
-		div {
-			img {
-			}
-		}
-
-		a {
-			opacity: 2;
-			font-weight: 700;
-			font-size: 36px;
-			line-height: 136.111111%; /* 49/36 */
-			color: #fff;
-
-			@media (max-width: 500px) {
-				font-size: 24px;
-			}
+		img {
+			height: 1.2lh;
 		}
 	}
 }

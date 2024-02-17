@@ -70,7 +70,7 @@ a {
 		order: 3;
 	}
 	.footer__media {
-		flex: 1 1 auto;
+		flex: 0 1 auto;
 		justify-content: center;
 		order: 2;
 	}

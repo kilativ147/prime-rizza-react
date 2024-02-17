@@ -11,7 +11,7 @@ return (
 		{/* <Greatings/> */}
 		<section className='main__container'>
 			{/* <Products /> */}
-			<Galery/>
+			{/* <Galery/> */}
 		</section>
 		<Form />
 	</div>

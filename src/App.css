@@ -39,6 +39,6 @@ body {
 [class*='__container'] {
   position: relative;
 	height: 100%;
-	width: clamp(320px, 98vw, var(--mw_page));
+	width: clamp(320px, 95vw, var(--mw_page));
   margin: 0 auto;
 }
