@@ -8,10 +8,10 @@ import Form from '../../form/Form'
 const MainPage = () => {
 return (
 	<div className={s.index}>
-		{/* <Greatings/> */}
+		<Greatings/>
 		<section className='main__container'>
-			{/* <Products /> */}
-			{/* <Galery/> */}
+			<Products />
+			<Galery/>
 		</section>
 		<Form />
 	</div>

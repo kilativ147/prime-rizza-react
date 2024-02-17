@@ -17,7 +17,7 @@ const Header = () => {
 
 	return (
 		<header className={s.header}>
-			<div className={s.header__container + ' ' +'header__container'} >
+			<div className={s.header__container} >
 				<div className={contentClassName}>
 					<NavBar handleMenuState={handleMenuState} />
 					<div></div>

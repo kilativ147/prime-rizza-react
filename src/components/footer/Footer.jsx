@@ -1,4 +1,4 @@
-import s from './Footer.module.css'
+import s from './Footer.module.scss'
 import { NavLink } from 'react-router-dom'
 import imgLogo from '../../img/Logo.png'
 import imgInst from '../../img/svg/FooterInst.svg'
@@ -11,7 +11,7 @@ const Footer = () => {
 	return (
 		<footer className={s.footer}>
 			<div className={s.footer__container}>
-				<div className={s.footer__content}>
+				<div className={s.footer__top}>
 					<NavLink to={'/'}>
 						<img src={imgLogo} alt='Instagram' />
 					</NavLink>
@@ -30,22 +30,20 @@ const Footer = () => {
 					</div>
 				</div>
 				<div className={s.footer__bottom}>
-					<div className={s.footer__rights}>
-						<p>© 2023 Всі права захищені</p>
-					</div>
+					<p className={s.footer__rights}>© 2023 Всі права захищені</p>
 					<address className={s.footer__address}>
-						<div>
+						<a href='#'>
 							<img src={imgAddress} alt='street' />
-							<p>вул. Єврейська площа 3</p>
-						</div>
-						<div>
+							<span> вул. Єврейська площа 3</span>
+						</a>
+						<a href='mailto:primepizza@gmail.com'>
 							<img src={imgMail} alt='mail' />
-							<a href='mailto:primepizza@gmail.com'>primepizza@gmail.com</a>
-						</div>
-						<div>
+							<span> primepizza@gmail.com</span>
+						</a>
+						<a href='tel:0670090209'>
 							<img src={imgTel} alt='' />
-							<a href='tel:0670090209'>+38 (067) 009 02 09</a>
-						</div>
+							<span> +38 (067) 009 02 09</span>
+						</a>
 					</address>
 				</div>
 			</div>

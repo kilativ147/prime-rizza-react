@@ -1,11 +1,11 @@
 .gallery {
 	&__content {
 		position: relative;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+	display: grid;
+	place-items: center;
 
 		height: 250px;
+		overflow: hidden;
 	}
 	&__back {
 		position: absolute;
@@ -26,7 +26,7 @@
 		height: 250px;
 		aspect-ratio: 1;
 		background-color: rgba(0, 0, 0, 0.65);
-		animation: moveLeft 20s linear infinite;
+		// animation: moveLeft 20s linear infinite;
 
 		@keyframes moveLeft {
 			0% {
