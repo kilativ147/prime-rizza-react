@@ -21,5 +21,3 @@ function Provider({ children }) {
 
 export { Provider }
 export default ProductsContext
-
-// import ProductsContext, {Provider} from './'
