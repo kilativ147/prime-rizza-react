@@ -19,8 +19,7 @@ const PaymentList = () => {
 		}
 	]
 
-	const DeliveryItems = () => {
-		return items.map((item) => (
+	const DeliveryItems = items.map((item) => (
 			<DeliveryItem
 				img={item.img}
 				text={item.text}
@@ -28,7 +27,7 @@ const PaymentList = () => {
 				isPay
 			/>
 		))
-	}
+	
 
 	return (
 		<article className={s.delivery__rules}>
@@ -36,7 +35,7 @@ const PaymentList = () => {
 				Правила оплати
 			</h2>
 			<div className={s.delivery__rules_flex}>
-				<DeliveryItems />
+				{DeliveryItems}
 			</div>
 		</article>
 	)

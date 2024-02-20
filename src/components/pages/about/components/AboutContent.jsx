@@ -5,8 +5,6 @@ import img2 from '../../../../img/pages/about/2.png'
 import img3 from '../../../../img/pages/about/3.png'
 import img4 from '../../../../img/pages/about/4.png'
 
-
-
 const AboutContent = () => {
 	const items = [
 		{
@@ -31,17 +29,13 @@ const AboutContent = () => {
 		},
 	]
 
-	const ContentItems = () => {
-		return items.map((item) => <AboutContentItem img={item.img} title={item.title} text={item.text}/>)
-	}
+	const ContentItems = items.map((item) => (
+		<AboutContentItem img={item.img} title={item.title} text={item.text} />
+	))
 
 	return (
-		<section className={s.about__container + ' ' + "about__container"}>
-			<div className={s.about__content_flex}>
-				<ContentItems/>
-				
-				
-			</div>
+		<section className={s.about__container + ' ' + 'about__container'}>
+			<div className={s.about__content_flex}>{ContentItems}</div>
 		</section>
 	)
 }

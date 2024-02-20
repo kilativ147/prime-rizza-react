@@ -9,7 +9,8 @@ const Header = () => {
 	const [menuState, setMenuState] = useState(false)
 
 	const handleMenuState = (newState = !menuState) => {
-		document.body.style.overflow = newState ? 'hidden' : 'visible'
+		// document.body.style.overflow = newState ? 'hidden' : 'visible'
+		document.body.classList = newState ? '_lock' : ''
 		setMenuState(newState)
 	}
 
@@ -17,17 +18,7 @@ const Header = () => {
 
 	return (
 		<header className={s.header}>
-			<div className={s.header__container + ' ' +'header__container'} 
-		// 	style={{
-		// 		content: "''",
-		// position: "absolute",
-		// top: "0",
-		// left: "0",
-		// width: "100%",
-		// height: "100%",
-		// backgroundColor: "#262626",
-		// 	}}
-		>
+			<div className={s.header__container} >
 				<div className={contentClassName}>
 					<NavBar handleMenuState={handleMenuState} />
 					<div></div>

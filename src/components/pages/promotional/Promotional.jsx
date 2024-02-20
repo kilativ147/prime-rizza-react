@@ -33,16 +33,7 @@ const Promotional = () => {
 		},
 	]
 
-	const PromotionalList = () => {
-		return items.map((item) => (
-			<PromotionalItem
-				img={item.img}
-				title={item.title}
-				text={item.text}
-				textWarning={item.textWarning}
-			/>
-		))
-	}
+	const PromotionalList = items.map((item) => <PromotionalItem {...item} />)
 
 	return (
 		<section
@@ -51,7 +42,7 @@ const Promotional = () => {
 				padding: '70px 20px',
 			}}
 		>
-			<PromotionalList />
+			{PromotionalList}
 		</section>
 	)
 }

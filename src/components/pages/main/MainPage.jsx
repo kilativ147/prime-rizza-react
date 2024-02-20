@@ -1,8 +1,20 @@
 import s from './MainPage.module.css'
+import Greatings from './components/Greatings'
+import Products from './components/Products'
+import Galery from './components/Galery'
+import Form from '../../form/Form'
+
 
 const MainPage = () => {
 return (
-<div>MainPage</div>
+	<div className={s.index}>
+		<Greatings/>
+		<section className='main__container'>
+			<Products />
+			<Galery/>
+		</section>
+		<Form />
+	</div>
 )
 }
 

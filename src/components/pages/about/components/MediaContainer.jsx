@@ -29,17 +29,11 @@ const MediaContainer = () => {
 		},
 	]
 
-	const MediaItems = () => {
-		return items.map((item) => (
-			<MediaItem title={item.title} img={item.img} link={item.link} subtitle={item.subtitle} />
-		))
-	}
+	const MediaItems = items.map((item) => (
+		<MediaItem title={item.title} img={item.img} link={item.link} subtitle={item.subtitle} />
+	))
 
-	return (
-		<div className={s.about__media}>
-			<MediaItems />
-		</div>
-	)
+	return <div className={s.about__media}>{MediaItems}</div>
 }
 
 export default MediaContainer
