@@ -39,7 +39,7 @@
 		width: 100%;
 		a {
 			position: relative;
-			background: linear-gradient(90deg, #ffa600, rgb(255, 204, 0)) left bottom / 0% 2px no-repeat;
+			background: var(--color) left bottom / 0% 2px no-repeat;
 			transition: background 0.3s ease;
 			&:hover,
 			&:focus {

@@ -29,26 +29,20 @@ const DeliveryList = () => {
 		},
 	]
 
-	const DeliveryItems = () => {
-		return items.map((item) => (
-			<DeliveryItem
-				img={item.img}
-				title={item.title}
-				text={item.text}
-				description={item.description}
-				color={item.color}
-			/>
-		))
-	}
+	const DeliveryItems = items.map((item) => (
+		<DeliveryItem
+			img={item.img}
+			title={item.title}
+			text={item.text}
+			description={item.description}
+			color={item.color}
+		/>
+	))
 
 	return (
 		<article className={s.delivery__rules}>
-			<h2>
-				Правила доставки
-			</h2>
-			<div className={s.delivery__rules_flex}>
-				<DeliveryItems />
-			</div>
+			<h2>Правила доставки</h2>
+			<div className={s.delivery__rules_flex}>{DeliveryItems}</div>
 		</article>
 	)
 }

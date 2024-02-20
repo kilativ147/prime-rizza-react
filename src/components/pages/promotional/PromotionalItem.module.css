@@ -1,16 +1,16 @@
 /* .promotional {
 	padding: 70px 20px;
 } */
-.promotional__content {
+.promotional__item {
 	display: flex;
 	align-items: center;
 	gap: 30px;
 }
-.promotional__content:not(:last-child) {
+.promotional__item:not(:last-child) {
 	padding-bottom: 40px;
 }
 
-.promotional__content:nth-child(even) {
+.promotional__item:nth-child(even) {
 	flex-direction: row-reverse;
 }
 
@@ -45,15 +45,14 @@
 }
 
 @media (max-width: 800px) {
-	.promotional__content {
+	.promotional__item:nth-child(1n) {
 		gap: 10px;
-	}
-	.promotional__content :not(:last-child) {
-		padding-bottom: 60px;
-	}
-	.promotional__content :nth-child(1n) {
 		flex-direction: column;
 	}
+	.promotional__item:not(:last-child) {
+		padding-bottom: 60px;
+	}
+	
 
 	.promotional__text {
 		text-align: center;

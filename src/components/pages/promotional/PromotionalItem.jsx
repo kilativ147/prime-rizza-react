@@ -2,7 +2,7 @@ import s from './PromotionalItem.module.css'
 
 const PromotionalItem = ({ img, title, text, textWarning }) => {
 	return (
-		<article className={s.promotional__content}>
+		<article className={s.promotional__item}>
 			<div className={s.promotional__image}>
 				<img src={img} alt={title} />
 			</div>

@@ -5,12 +5,15 @@
 		max-width: 770px;
 		margin: 0 auto;
 		padding-bottom: 60px;
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-		grid-column-gap: 30px;
-		grid-row-gap: 20px;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		column-gap: 30px;
+		row-gap: 20px;
 	}
 	&__category_button {
+		flex: 1 1 150px;
+
 		padding: 5px 20px;
 		text-align: center;
 		font-size: 24px;
@@ -23,15 +26,15 @@
 		cursor: pointer;
 
 		&:hover,
-		&[aria-current='page']{
-			background-color:  #ffdb47;
+		&[aria-current='page'] {
+			background-color: #ffdb47;
 			color: #fff;
 			font-weight: 700;
 		}
 	}
 	&__items {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(273px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(273px, 1fr));
 		grid-row-gap: 50px;
 		grid-column-gap: 30px;
 		justify-items: center;

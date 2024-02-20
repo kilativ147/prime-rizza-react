@@ -2,7 +2,7 @@ body {
 	--mw_page: 1300px;
 	--color: linear-gradient(92.06deg, #ffdb47 3.15%, #fdcc06 96.53%);
 	--mob_width: 800px;
-	
+
 	--button_radius: 50px;
 	--button_padding: 5px 20px;
 }
@@ -14,15 +14,19 @@ body {
 	padding: var(--button_padding);
 }
 
-
-
 body {
-  font-family: 'Open Sans', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 	height: 100%;
 	font-size: 16px;
 	line-height: 150%; /* 24/16 */
 	color: #262626;
+
+	@media (max-width: 800px) { /*Mobile size*/
+		&._lock {
+			overflow: hidden;
+		}
+	}
 }
 
 .wraper {
@@ -37,8 +41,8 @@ body {
 }
 
 [class*='__container'] {
-  position: relative;
+	position: relative;
 	height: 100%;
 	width: clamp(320px, 95vw, var(--mw_page));
-  margin: 0 auto;
+	margin: 0 auto;
 }

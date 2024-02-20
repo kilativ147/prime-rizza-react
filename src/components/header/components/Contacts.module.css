@@ -8,6 +8,7 @@
 .header__adress > div {
 	margin: 0;
 	display: flex;
+	align-items: center;
 	gap: 10px;
 }
 @media (max-width: 800px){

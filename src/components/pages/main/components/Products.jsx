@@ -7,7 +7,7 @@ const Products = () => {
 	return (
 		<article className={s.products}>
 			<div className={s.products__category}>
-				<NavLink to='/' exact className={s.products__category_button}>
+				<NavLink to='/pizza' exact className={s.products__category_button}>
 					Піца
 				</NavLink>
 				<NavLink to='/salad' className={s.products__category_button}>

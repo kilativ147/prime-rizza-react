@@ -1,4 +1,4 @@
-import s from './NavBar.module.css'
+import s from './NavBar.module.scss'
 import { NavLink } from 'react-router-dom'
 
 const NavBar = ({ handleMenuState }) => {

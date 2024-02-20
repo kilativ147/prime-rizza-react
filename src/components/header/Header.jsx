@@ -9,7 +9,8 @@ const Header = () => {
 	const [menuState, setMenuState] = useState(false)
 
 	const handleMenuState = (newState = !menuState) => {
-		document.body.style.overflow = newState ? 'hidden' : 'visible'
+		// document.body.style.overflow = newState ? 'hidden' : 'visible'
+		document.body.classList = newState ? '_lock' : ''
 		setMenuState(newState)
 	}
 
