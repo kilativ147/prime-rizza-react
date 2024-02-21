@@ -14,7 +14,7 @@ const NavBar = ({ handleMenuState }) => {
 				Доставка
 			</NavLink>
 			<NavLink to='/about' className={s.header__link} onClick={handleClick}>
-				Доставка
+				Про нас
 			</NavLink>
 		</nav>
 	)

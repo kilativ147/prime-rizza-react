@@ -10,8 +10,8 @@ import imgInst from '../../../../img/svg/InstagramWhite.svg'
 const Galery = () => {
 	const items = [img1, img2, img3, img4, img5, img6, img1, img2, img3, img4, img5, img6]
 
-	const imgList = items.map((item) => (
-		<div className={s.gallery__back_img}>
+	const imgList = items.map((item, index) => (
+		<div key={index} className={s.gallery__back_img}>
 			<img src={item} alt='' />
 		</div>
 	))

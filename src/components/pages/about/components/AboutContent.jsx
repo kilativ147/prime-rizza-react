@@ -29,9 +29,7 @@ const AboutContent = () => {
 		},
 	]
 
-	const ContentItems = items.map((item) => (
-		<AboutContentItem img={item.img} title={item.title} text={item.text} />
-	))
+	const ContentItems = items.map((item, index) => <AboutContentItem key={index} {...item} />)
 
 	return (
 		<section className={s.about__container + ' ' + 'about__container'}>

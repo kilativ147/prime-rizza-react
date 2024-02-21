@@ -8,7 +8,7 @@ import { BrowserRouter } from 'react-router-dom'
 import  ProductsContext, { Provider }  from './context/ProductsContext'
 
 
-
+console.clear()
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
 	// <StrictMode>

@@ -29,9 +29,7 @@ const MediaContainer = () => {
 		},
 	]
 
-	const MediaItems = items.map((item) => (
-		<MediaItem title={item.title} img={item.img} link={item.link} subtitle={item.subtitle} />
-	))
+	const MediaItems = items.map((item, index) => <MediaItem key={index} {...item} />)
 
 	return <div className={s.about__media}>{MediaItems}</div>
 }

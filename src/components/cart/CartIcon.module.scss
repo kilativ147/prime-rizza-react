@@ -1,19 +1,19 @@
 .cart {
 	position: fixed;
 	top: 25%;
-	right: -25vw;
+	right: -0vw;
 	z-index: 19;
 	transition: all 0.3s ease;
-	// visibility: hidden;
-	// opacity: 0;
+	visibility: hidden;
+	opacity: 0;
 
   
 	cursor: pointer;
   
-  right: clamp(15px, 4vw, 50px);
 	&._active {
-    // opacity: 1;
-    // visibility: visible;
+		right: clamp(15px, 4vw, 50px);
+    opacity: 1;
+    visibility: visible;
 	}
 
 	&__icon {

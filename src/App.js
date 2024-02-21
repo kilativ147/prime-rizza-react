@@ -19,11 +19,14 @@ const App = () => {
 				<ScrollToTop />
 				<Routes>
 					<Route path='/' element={<MainPage />}>
-						<Route path='/' element={<ProductsList list={'pizza'}/>} />
-						<Route path='pizza' element={<ProductsList list={'pizza'}/>} />
-						<Route path='salad' element={<ProductsList list={'salad'}/>} />
-						<Route path='drinks' element={<ProductsList list={'drinks'}/>} />
-						<Route path='other' element={<ProductsList list={'other'}/>} />
+						<Route path='/' element={<ProductsList list={'pizza'} />} />
+						<Route
+							path='pizza'
+							element={<ProductsList list={'pizza'} />}
+						/>
+						<Route path='salad' element={<ProductsList list={'salad'} />} />
+						<Route path='drinks' element={<ProductsList list={'drinks'} />} />
+						<Route path='other' element={<ProductsList list={'other'} />} />
 					</Route>
 					<Route path='/promotional' element={<Promotional />} />
 					<Route path='/delivery' element={<Delivery />} />
