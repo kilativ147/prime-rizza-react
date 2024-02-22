@@ -6,14 +6,19 @@
 	transition: all 0.3s ease;
 	visibility: hidden;
 	opacity: 0;
-
-  
 	cursor: pointer;
   
 	&._active {
 		right: clamp(15px, 4vw, 50px);
     opacity: 1;
     visibility: visible;
+	
+		@media (min-width: 1540px){
+			right: calc((100vw - 1540px) / 2);
+		}
+		@media (max-height: 450px){
+			top: 40%;
+		}
 	}
 
 	&__icon {

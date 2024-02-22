@@ -1,8 +1,8 @@
 import s from './MainPage.module.css'
 import { useEffect, useState, useContext } from 'react'
 import ProductsContext from '../../../context/ProductsContext'
-import CartIcon from '../../cart/CartIcon'
-import CartList from './../../cart/CartList'
+import CartIcon from './components/cart/CartIcon'
+import CartList from './components/cart/CartList'
 import Greatings from './components/Greatings'
 import Products from './components/Products'
 import Galery from './components/Galery'
@@ -10,7 +10,7 @@ import Form from '../../form/Form'
 
 const MainPage = () => {
 	//@ Show or not the WISHLIST
-	const [showList, setShowList] = useState(false)
+	const [showList, setShowList] = useState(true)
 	const { changeCartList } = useContext(ProductsContext)
 
 

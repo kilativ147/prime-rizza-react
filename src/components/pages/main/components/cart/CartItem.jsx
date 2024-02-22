@@ -1,6 +1,8 @@
 import { useContext, useEffect } from 'react'
-import s from './CartList.module.scss'
-import ProductsContext from '../../context/ProductsContext'
+import s from './CartItem.module.scss'
+import { CiSquarePlus, CiSquareMinus } from 'react-icons/ci'
+import { RxCross2 } from 'react-icons/rx'
+import ProductsContext from '../../../../../context/ProductsContext'
 
 const CartItem = ({ id, img, title, count, price }) => {
 	const { cartList, changeCartList } = useContext(ProductsContext)
@@ -26,7 +28,7 @@ const CartItem = ({ id, img, title, count, price }) => {
 	}
 
 	const onDeleteHandle = () => {
-    let oldList = { ...cartList }
+		let oldList = { ...cartList }
 		delete oldList[id]
 		changeCartList(oldList)
 	}
@@ -34,30 +36,22 @@ const CartItem = ({ id, img, title, count, price }) => {
 	const sum = price * count
 
 	return (
-		<li>
-			<div>
+		<li className={s.item}>
+			<div className={s.img}>
 				<img src={img} alt={title} />
 			</div>
 			<p className={s.title}>{title}</p>
-			<button
-				type='button'
-				className={s.basket__item_button + ' ' + s.minus}
-				onClick={onMinusHandle}
-			>
-				-
+			<button type='button' className={s.button} onClick={onMinusHandle}>
+				<CiSquareMinus />
 			</button>
 			<p className={s.count}>{count}</p>
-			<button type='button' className={s.basket__item_button + ' ' + s.plus} onClick={onPlusHandle}>
-				+
+			<button type='button' className={s.button} onClick={onPlusHandle}>
+				<CiSquarePlus />
 			</button>
 			<p className={s.summ}>{sum}</p>
-			<span> грн.</span>
-			<button
-				type='button'
-				className={s.basket__item_button + ' ' + s.delete}
-				onClick={onDeleteHandle}
-			>
-				&#215;
+			<span className={s.currency}> грн.</span>
+			<button type='button' className={s.button} onClick={onDeleteHandle}>
+				<RxCross2 />
 			</button>
 		</li>
 	)

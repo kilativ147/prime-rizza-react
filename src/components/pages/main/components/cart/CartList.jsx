@@ -1,7 +1,8 @@
 import s from './CartList.module.scss'
 import CartItem from './CartItem'
+import { RxCross2 } from 'react-icons/rx'
 import { useContext, useEffect, useState, useRef } from 'react'
-import ProductsContext from '../../context/ProductsContext'
+import ProductsContext from '../../../../../context/ProductsContext'
 
 const CartList = ({ changeVisibility, showList }) => {
 	const { productsList, cartList, changeCartList } = useContext(ProductsContext)
@@ -49,9 +50,8 @@ const CartList = ({ changeVisibility, showList }) => {
 				listRef.current &&
 				listRef.current.contains(event.target) &&
 				!listAreaRef.current.contains(event.target)
-			) {
+			)
 				changeVisibility(false)
-			}
 		}
 		document.addEventListener('click', handleClickOutside)
 		return () => {
@@ -66,12 +66,12 @@ const CartList = ({ changeVisibility, showList }) => {
 	return (
 		<aside className={classVisibilityA} ref={listRef}>
 			<div className={classVisibility} ref={listAreaRef}>
-				<button type='button' className={s.basket__close} onClick={() => changeVisibility(false)} />
+				<button type='button' className={s.basket__close} onClick={() => changeVisibility(false)}>
+					<RxCross2 />
+				</button>
 				<form action='' className={s.basket__form}>
-					<h4>Ваше замовлення</h4>
-					<div className={s.basket__list_content}>
-						<ul className={s.basket__list}>{cartItems}</ul>
-					</div>
+					<p className={s.basket__title}>Ваше замовлення</p>
+					<ul className={s.basket__list}>{cartItems}</ul>
 					<div className={s.basket__summ}>
 						сума: <span>{sum}</span> грн.
 					</div>

@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 import s from './CartIcon.module.scss'
 import { IoIosCart } from 'react-icons/io'
-import ProductsContext from '../../context/ProductsContext'
+import ProductsContext from '../../../../../context/ProductsContext'
 
 const CartIcon = ({ changeVisibility }) => {
 	const { cartList } = useContext(ProductsContext)
