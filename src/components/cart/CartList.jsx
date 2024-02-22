@@ -3,10 +3,11 @@ import CartItem from './CartItem'
 import { useContext, useEffect, useState, useRef } from 'react'
 import ProductsContext from '../../context/ProductsContext'
 
-const CartList = ({ changeVisibility, showList, cartRef }) => {
+const CartList = ({ changeVisibility, showList }) => {
 	const { productsList, cartList, changeCartList } = useContext(ProductsContext)
 	const [sum, setSum] = useState(0)
 	const listRef = useRef(null)
+	const listAreaRef = useRef(null)
 
 	//@ Change the SUM of all products in wish list
 	useEffect(() => {
@@ -44,7 +45,11 @@ const CartList = ({ changeVisibility, showList, cartRef }) => {
 	//@ hide WISHLIST by click OUTSIDE
 	useEffect(() => {
 		const handleClickOutside = (event) => {
-			if (listRef.current && listRef.current.contains(event.target)) {
+			if (
+				listRef.current &&
+				listRef.current.contains(event.target) &&
+				!listAreaRef.current.contains(event.target)
+			) {
 				changeVisibility(false)
 			}
 		}
@@ -60,7 +65,7 @@ const CartList = ({ changeVisibility, showList, cartRef }) => {
 
 	return (
 		<aside className={classVisibilityA} ref={listRef}>
-			<div className={classVisibility}>
+			<div className={classVisibility} ref={listAreaRef}>
 				<button type='button' className={s.basket__close} onClick={() => changeVisibility(false)} />
 				<form action='' className={s.basket__form}>
 					<h4>Ваше замовлення</h4>
