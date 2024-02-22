@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import s from './About.module.css'
 import GreatingsImage from '../../../img/pages/about/Background.png'
 import MediaContainer from './components/MediaContainer'
@@ -5,6 +6,9 @@ import AboutContent from './components/AboutContent'
 import Form from '../../form/Form'
 
 const About = () => {
+	useEffect(() => {
+		document.title = 'Prime Pizza ⋅ Про нас'
+	}, [])
 	return (
 		<div
 			style={{

@@ -5,6 +5,7 @@ import Product from './Product'
 
 const ProductsList = ({ list }) => {
 	const { pizzaList, saladList, drinksList, otherList } = useContext(ProductsContext)
+
 	const PizzaItems = pizzaList.map((item) => <Product key={item.id} {...item} />)
 	const SaladItems = saladList.map((item) => <Product key={item.id} {...item} />)
 	const DrinksItems = drinksList.map((item) => <Product key={item.id} {...item} />)
@@ -16,11 +17,11 @@ const ProductsList = ({ list }) => {
 		case 'salad':
 			return <>{SaladItems}</>
 		case 'drinks':
-			return <>{ DrinksItems }</>
+			return <>{DrinksItems}</>
 		case 'other':
 			return <>{OtherItems}</>
 		default:
-			return <>{ PizzaItems }</>
+			return <>{PizzaItems}</>
 	}
 }
 

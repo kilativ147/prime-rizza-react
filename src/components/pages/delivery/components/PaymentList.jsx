@@ -14,29 +14,17 @@ const PaymentList = () => {
 		{
 			img: imgCard,
 			text: 'Карта',
-			description: 'Розрахунки картою проводяться через термінал який кур\'єр буде мати з собою',
+			description: "Розрахунки картою проводяться через термінал який кур'єр буде мати з собою",
 			color: 'yellow',
-		}
+		},
 	]
 
-	const DeliveryItems = items.map((item) => (
-			<DeliveryItem
-				img={item.img}
-				text={item.text}
-				description={item.description}
-				isPay
-			/>
-		))
-	
+	const DeliveryItems = items.map((item, index) => <DeliveryItem key={index} {...item} isPay />)
 
 	return (
 		<article className={s.delivery__rules}>
-			<h2>
-				Правила оплати
-			</h2>
-			<div className={s.delivery__rules_flex}>
-				{DeliveryItems}
-			</div>
+			<h2>Правила оплати</h2>
+			<div className={s.delivery__rules_flex}>{DeliveryItems}</div>
 		</article>
 	)
 }

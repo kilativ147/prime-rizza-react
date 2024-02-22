@@ -1,4 +1,5 @@
 // import s from './Promotional.module.css'
+import { useEffect } from 'react'
 import PromotionalItem from './PromotionalItem'
 import img1Plus1 from '../../../img/pages/promotional/Offer1+1.png'
 import imgMinus15 from '../../../img/pages/promotional/Offer-15.png'
@@ -6,6 +7,9 @@ import imgCoffee from '../../../img/pages/promotional/OfferCoffee.png'
 import imgCola from '../../../img/pages/promotional/OfferCola.png'
 
 const Promotional = () => {
+	useEffect(() => {
+		document.title = 'Prime Pizza ⋅ Акції'
+	}, [])
 	const items = [
 		{
 			img: img1Plus1,
@@ -33,7 +37,7 @@ const Promotional = () => {
 		},
 	]
 
-	const PromotionalList = items.map((item) => <PromotionalItem {...item} />)
+	const PromotionalList = items.map((item, index) => <PromotionalItem key={index} {...item} />)
 
 	return (
 		<section

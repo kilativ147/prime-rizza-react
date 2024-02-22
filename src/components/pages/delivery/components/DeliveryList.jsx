@@ -29,15 +29,7 @@ const DeliveryList = () => {
 		},
 	]
 
-	const DeliveryItems = items.map((item) => (
-		<DeliveryItem
-			img={item.img}
-			title={item.title}
-			text={item.text}
-			description={item.description}
-			color={item.color}
-		/>
-	))
+	const DeliveryItems = items.map((item, index) => <DeliveryItem key={index} {...item} />)
 
 	return (
 		<article className={s.delivery__rules}>
