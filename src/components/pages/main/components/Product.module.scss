@@ -95,14 +95,18 @@ $itemBorder: rgba(170, 180, 147, 0.29);
 		aspect-ratio: 1;
 		border-radius: 50%;
 		background: #fff url('../../../../img/svg/ProductAdd.svg') calc(50% + 1px) calc(50% - 2px)
-		no-repeat;
+			no-repeat;
 		transition: all 0.3s ease;
-		
-		&:hover {
+
+		&:hover,
+		&:focus {
 			width: 50px;
 			box-shadow: 0px 0px 20px rgba(255, 219, 71, 0.5);
 			background: #fdcc06 url('../../../../img/svg/ProductAddHover.svg') calc(50% + 1px)
 				calc(50% - 2px) no-repeat;
+			}
+			&:active {
+				box-shadow: inset 0px 0px 0px 3px #fff;
 		}
 	}
 }

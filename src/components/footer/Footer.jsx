@@ -21,10 +21,10 @@ const Footer = () => {
 						<NavLink to={'/about'}>Про нас</NavLink>
 					</nav>
 					<div className={s.footer__media}>
-						<a href='instagram.com'>
+						<a href='http://instagram.com' target='_blank'>
 							<img src={imgInst} alt='Instagram' />
 						</a>
-						<a href='facebook.com'>
+						<a href='http://facebook.com' target='_blank'>
 							<img src={imgFb} alt='Facebook' />
 						</a>
 					</div>

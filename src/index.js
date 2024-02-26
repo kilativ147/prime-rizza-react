@@ -5,7 +5,7 @@ import './index.css'
 import App from './App'
 import { BrowserRouter } from 'react-router-dom'
 
-import  ProductsContext, { Provider }  from './context/ProductsContext'
+import  { Provider }  from './context/ProductsContext'
 
 
 console.clear()

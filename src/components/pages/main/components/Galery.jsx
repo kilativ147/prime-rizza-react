@@ -23,8 +23,9 @@ const Galery = () => {
 					<div className={s.gallery__back_flex}>{imgList}</div>
 				</div>
 				<div className={s.label}>
-					<a href='http://instagram.com'>
-						<img src={imgInst} alt='' />@primepizza.if
+					<a href='http://instagram.com' target='_blank'>
+						<img src={imgInst} alt='' />
+						@primepizza.if
 					</a>
 				</div>
 			</div>
