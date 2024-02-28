@@ -20,6 +20,7 @@ function Provider({ children }) {
 
 	const changeCartList = (list) => {
 		localStorage.setItem('cartList', JSON.stringify(list))
+		
 		setCartList(list)
 	}
 

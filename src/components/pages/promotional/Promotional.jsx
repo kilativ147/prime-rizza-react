@@ -9,7 +9,7 @@ import imgCola from '../../../img/pages/promotional/OfferCola.png'
 const Promotional = () => {
 	useEffect(() => {
 		document.title = 'Prime Pizza ⋅ Акції'
-	}, [])
+}, [])
 	const items = [
 		{
 			img: img1Plus1,

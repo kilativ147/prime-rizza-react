@@ -6,18 +6,15 @@ import CartList from './components/cart/CartList'
 import Greatings from './components/Greatings'
 import Products from './components/Products'
 import Galery from './components/Galery'
-import Form from '../../form/Form'
 
 const MainPage = () => {
 	//@ Show or not the WISHLIST
 	const [showList, setShowList] = useState(false)
 	const { changeCartList } = useContext(ProductsContext)
 
-
 	const changeVisibility = (state = true) => {
 		setShowList(state)
 	}
-
 
 	//@ Change page's TITLE and load DATA from LOCAL STORAGE
 	useEffect(() => {
@@ -32,13 +29,12 @@ const MainPage = () => {
 	return (
 		<div className={s.index}>
 			<CartIcon changeVisibility={changeVisibility} />
-			<CartList showList={showList} changeVisibility={changeVisibility}/>
+			<CartList showList={showList} changeVisibility={changeVisibility} />
 			<Greatings />
 			<section className='main__container'>
 				<Products />
 				<Galery />
 			</section>
-			<Form />
 		</div>
 	)
 }

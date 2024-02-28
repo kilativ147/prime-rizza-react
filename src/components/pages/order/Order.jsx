@@ -4,15 +4,16 @@ import { FaLongArrowAltLeft } from 'react-icons/fa'
 import ProductsContext from '../../../context/ProductsContext'
 import TableItem from './TableItem'
 import orderFunc from './orderFunc'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
-const Order = () => {
+const Order = ({ setLoader }) => {
 	const [userName, setUserName] = useState('')
 	const [userPhone, setUserPhone] = useState('')
-	const [userEmail, setUserEmail] = useState('vitalii.yushchuck@gmail.com')
+	const [userEmail, setUserEmail] = useState('')
 	const [userAddress, setUserAddress] = useState('')
 	const [userPayment, setUserPayment] = useState('')
 	const [userComment, setUserComment] = useState('')
+	const navigate = useNavigate()
 	const { cartList, productsList, changeCartList } = useContext(ProductsContext)
 
 	const orderList = Object.keys(cartList).map((itemKey, index) => {
@@ -28,14 +29,16 @@ const Order = () => {
 		) : null
 	})
 	const sum = Object.keys(cartList)
-		.map((itemKey, index) => {
+		.map((itemKey) => {
 			const item = productsList.find((i) => i.id === itemKey)
 			return item ? item.price * cartList[itemKey] : null
 		})
 		.reduce((a, b) => a + b, 0)
+
 	const handleSubmit = async (e) => {
 		e.preventDefault()
-		orderFunc(
+		setLoader(true)
+		const send = await orderFunc(
 			cartList,
 			productsList,
 			userName,
@@ -46,6 +49,22 @@ const Order = () => {
 			userComment,
 			sum,
 		)
+		if (send !== false) {
+			localStorage.removeItem('cartList')
+			changeCartList({})
+			setUserName('')
+			setUserPhone('')
+			setUserEmail('')
+			setUserAddress('')
+			setUserPayment('')
+			setUserComment('')
+			console.log('redirect')
+
+			setTimeout(() => {
+				setLoader(false)
+				navigate('/', { replace: true })
+			}, 0)
+		} else console.log('error')
 	}
 
 	useEffect(() => {
@@ -61,7 +80,11 @@ const Order = () => {
 	return (
 		<section className={s.order + ' __container'}>
 			<NavLink to='/' className={s.order__back}>
-				<span><FaLongArrowAltLeft /></span>	  На головну</NavLink>
+				<span>
+					<FaLongArrowAltLeft />
+				</span>{' '}
+				На головну
+			</NavLink>
 			<div className={s.card}>
 				<p className={s.title}>Ваше замовлення:</p>
 				<div className={s.table}>

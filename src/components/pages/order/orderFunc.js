@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useContext } from 'react'
 import ProductsContext from '../../../context/ProductsContext'
 
-const orderFunc = (
+const orderFunc = async (
 	cartList,
 	productsList,
 	userName,
@@ -51,7 +51,7 @@ const orderFunc = (
 	const pay = userPayment === 'card' ? 'Онлайн' : 'Готівкою'
 	const comm = userComment ? `Коментар до замовлення: <i>${userComment}</i>` : ''
 
-	const mailMessage = `<p>Нещодавно Ви оформили замовлення в <b>${ownerName}</b></p><table ${styles.table}>${table}</table><p>Форма оплати: <b>${pay}</b></p><p>Доставка за адресою: <b>${userAddress}</b></p><p>${comm}</p><p>Це Ваш електронний чек, дякуємо що обрали нас. Смачного!</p>`
+	const mailMessage = `<p>Нещодавно Ви оформили замовлення в <b>${ownerName}</b></p><table ${styles.table}>${table}</table><p>Контактний номер: ${userPhone}</p><p>Форма оплати: <b>${pay}</b></p><p>Доставка за адресою: <b>${userAddress}</b></p><p>${comm}</p><p style='font-size: 1.1rem'>Це Ваш електронний чек, дякуємо що обрали нас. Смачного!</p>`
 
 	//% SUBTITLE
 	const subtitle = `З повагою, <b>${ownerName}</b>`
@@ -64,35 +64,29 @@ const orderFunc = (
 	const ownerContacts = contactsLinks.join(' | ')
 	const ps = `<p ${styles.ps}>Повідомлення має інформаційний характер. Сайт слугує елементом портфоліо та не надає ніяких послуг.</p>`
 
-	const handleSubmit = async () => {
-		const data = {
-			service_id: serviceId,
-			template_id: templateId,
-			user_id: publicKey,
-			template_params: {
-				customer_name: userName,
-				customer_phone: userPhone,
-				customer_email: userEmail,
-				from_name: ownerName,
-				title,
-				message: mailMessage,
-				subtitle,
-				from_contacts: ownerContacts,
-				ps,
-			},
-		}
-
-		try {
-			const res = await axios.post('https://api.emailjs.com/api/v1.0/email/send', data)
-			// setUserName('')
-			// setUserPhone('')
-			// setUserEmail('')
-			alert('Відправлено', res.data)
-		} catch (error) {
-			alert('Помилка!', error)
-		}
+	const data = {
+		service_id: serviceId,
+		template_id: templateId,
+		user_id: publicKey,
+		template_params: {
+			customer_name: userName,
+			customer_phone: userPhone,
+			customer_email: userEmail,
+			from_name: ownerName,
+			title,
+			message: mailMessage,
+			subtitle,
+			from_contacts: ownerContacts,
+			ps,
+		},
 	}
 
-	handleSubmit()
+	try {
+			await axios.post('https://api.emailjs.com/api/v1.0/email/send', data)
+			return true
+	} catch (error) {
+		alert('Помилка!', error)
+		return false
+	}
 }
 export default orderFunc

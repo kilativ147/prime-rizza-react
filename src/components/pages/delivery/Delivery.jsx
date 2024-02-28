@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import s from './Delivery.module.css'
-import Form from '../../form/Form'
 import DeliveryList from './components/DeliveryList'
 import PaymentList from './components/PaymentList'
 
@@ -16,7 +15,6 @@ const Delivery = () => {
 					<PaymentList />
 				</div>
 			</section>
-			<Form />
 		</div>
 	)
 }
