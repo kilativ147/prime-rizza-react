@@ -1,4 +1,4 @@
-import s from './AboutContent.module.css'
+import s from './AboutContent.module.scss'
 import AboutContentItem from './AboutContentItem'
 import img1 from '../../../../img/pages/about/1.png'
 import img2 from '../../../../img/pages/about/2.png'

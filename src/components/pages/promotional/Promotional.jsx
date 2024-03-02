@@ -1,4 +1,4 @@
-// import s from './Promotional.module.css'
+// import s from './Promotional.module.scss'
 import { useEffect } from 'react'
 import PromotionalItem from './PromotionalItem'
 import img1Plus1 from '../../../img/pages/promotional/Offer1+1.png'

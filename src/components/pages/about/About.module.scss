@@ -1,0 +1,22 @@
+.about {
+	position: relative;
+	&__hero {
+		width: 100%;
+		height: clamp(250px, 40vh, 600px);
+		position: relative;
+		margin-bottom: clamp(50px, 22vw, 250px);
+	}
+	&__hero_background {
+		position: absolute;
+		top: 0px;
+		left: 0;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}

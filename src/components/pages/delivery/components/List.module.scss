@@ -1,0 +1,19 @@
+.article {
+	&:not(:last-child) {
+		padding-bottom: 100px;
+	}
+
+	h2 {
+		text-align: center;
+		font-weight: 700;
+		font-size: 36px;
+		line-height: 136.111111%;
+		/* 49/36 */
+		padding-bottom: 50px;
+	}
+}
+.list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	grid-gap: 50px;
+}

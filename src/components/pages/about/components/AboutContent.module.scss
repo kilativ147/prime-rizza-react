@@ -1,18 +1,15 @@
 .about__container {
-	padding: 0px 20px;
-	height: fit-content;
-
+	// padding: 0px 10px;
+	// height: fit-content;
+	position: relative;
 }
 .about__content_flex {
 	display: flex;
 	gap: 70px;
 	flex-direction: column;
 	padding-bottom: 90px;
-}
-
-
-@media (max-width: 900px) {
-	.about__content_flex {
-    row-gap: 75px;
+	
+	@media (max-width: 900px) {
+		row-gap: 75px;
 	}
 }

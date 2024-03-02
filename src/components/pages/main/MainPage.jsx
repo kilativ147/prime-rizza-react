@@ -1,9 +1,9 @@
-import s from './MainPage.module.css'
+import s from './MainPage.module.scss'
 import { useEffect, useState, useContext } from 'react'
 import ProductsContext from '../../../context/ProductsContext'
 import CartIcon from './components/cart/CartIcon'
 import CartList from './components/cart/CartList'
-import Greatings from './components/Greatings'
+import Hero from './components/Hero'
 import Products from './components/Products'
 import Galery from './components/Galery'
 
@@ -30,8 +30,8 @@ const MainPage = () => {
 		<div className={s.index}>
 			<CartIcon changeVisibility={changeVisibility} />
 			<CartList showList={showList} changeVisibility={changeVisibility} />
-			<Greatings />
-			<section className='main__container'>
+			<Hero />
+			<section className={s.main__container}>
 				<Products />
 				<Galery />
 			</section>

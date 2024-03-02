@@ -1,8 +1,8 @@
-import s from '../Delivery.module.css'
+import s from './List.module.scss'
 import img20Min from '../../../../img/svg/20m.svg'
 import img40Min from '../../../../img/svg/40m.svg'
 import img60Min from '../../../../img/svg/60m.svg'
-import DeliveryItem from './DeliveryItem'
+import Item from './Item'
 
 const DeliveryList = () => {
 	const items = [
@@ -29,12 +29,12 @@ const DeliveryList = () => {
 		},
 	]
 
-	const DeliveryItems = items.map((item, index) => <DeliveryItem key={index} {...item} />)
+	const DeliveryItems = items.map((item, index) => <Item key={index} {...item} />)
 
 	return (
-		<article className={s.delivery__rules}>
+		<article className={s.article}>
 			<h2>Правила доставки</h2>
-			<div className={s.delivery__rules_flex}>{DeliveryItems}</div>
+			<div className={s.list}>{DeliveryItems}</div>
 		</article>
 	)
 }

@@ -1,4 +1,4 @@
-import s from './PromotionalItem.module.css'
+import s from './PromotionalItem.module.scss'
 
 const PromotionalItem = ({ img, title, text, textWarning }) => {
 	return (

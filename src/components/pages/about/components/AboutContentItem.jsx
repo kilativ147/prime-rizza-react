@@ -1,4 +1,4 @@
-import s from './AboutContentItem.module.css'
+import s from './AboutContentItem.module.scss'
 
 const AboutContentItem = ({ img, title, text }) => {
 	return (
