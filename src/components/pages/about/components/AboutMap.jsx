@@ -1,37 +1,47 @@
-import s from './AboutMap.module.css'
+import s from './AboutMap.module.scss'
+import imgLogo from '../../../../img/Logo.png'
+import imgEmail from '../../../../img/svg/FooterMail.svg'
+import imgAddress from '../../../../img/svg/FooterAddress.svg'
+import imgPhone from '../../../../img/svg/FooterPhone.svg'
+import imgTime from '../../../../img/svg/HeaderTime.svg'
+import { useContext } from 'react'
+import ProductsContext from '../../../../context/ProductsContext'
 
 const AboutMap = () => {
+const {contacts} = useContext(ProductsContext)
+
 	return (
-		<section className='about__map map animation-bottom'>
-			<div className='map__container'>
-				<div className='map__content'>
-					<div className='map__logo'>
-						<img src='img/icons/Logo.png' alt='Logo' />
+		<section className={s.map}>
+			<a href={contacts.map} target='_blank'></a>
+			<div className={s.map__container}>
+				<div className={s.map__content}>
+					<div className={s.map__logo}>
+						<img src={imgLogo} alt='Logo' />
 					</div>
-					<address className='map__contacts-flex'>
-						<div className='map__contacts-item'>
+					<address className={s.map__contacts_flex}>
+						<div className={s.map__contact}>
 							<div>
-								<img src='img/icons/footer_address.svg' alt='address' />
+								<img src={imgAddress} alt='address' />
 							</div>
-							<p>вул. Європейська площа 3</p>
+							<a href={contacts.map} target='_blank'>{contacts.address}</a>
 						</div>
-						<div className='map__contacts-item'>
+						<div className={s.map__contact}>
 							<div>
-								<img src='img/icons/footer_mail.svg' alt='mail' />
+								<img src={imgEmail} alt='email' />
 							</div>
-							<a href='mailto:primepizza@gmail.com'>primepizza@gmail.com</a>
+							<a href={contacts.mailTo}>{contacts.email}</a>
 						</div>
-						<div className='map__contacts-item'>
+						<div className={s.map__contact}>
 							<div>
-								<img src='img/icons/footer_phone.svg' alt='phone' />
+								<img src={imgPhone} alt='phone' />
 							</div>
-							<a href='tel:+380952081079'>+38 (095) 208 10 79</a>
+							<a href={contacts.tel}>{contacts.phone}</a>
 						</div>
-						<div className='map__contacts-item'>
+						<div className={s.map__contact}>
 							<div>
-								<img src='img/icons/header_time.svg' alt='time' />
+								<img src={imgTime} alt='time' />
 							</div>
-							<p>Кожного дня 10:00 - 22:00</p>
+							<p>{contacts.time}</p>
 						</div>
 					</address>
 				</div>

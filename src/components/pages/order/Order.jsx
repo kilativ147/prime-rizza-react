@@ -63,7 +63,8 @@ const Order = ({ setLoader }) => {
 			setTimeout(() => {
 				setLoader(false)
 				navigate('/', { replace: true })
-			}, 0)
+			}, 500)
+			alert('Ваше замовлення надіслано')
 		} else console.log('error')
 	}
 

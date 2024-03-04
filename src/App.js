@@ -30,27 +30,27 @@ const App = () => {
 
 	return (
 		<div className='wraper'>
-				{loader && <Loader loader={loader} />}
-				<Header />
-				<main className='main'>
-					<ScrollToTop />
-					<Routes>
-						<Route path='/' element={<MainPage />}>
-							<Route path='/' element={<ProductsList list={'pizza'} />} />
-							<Route path='pizza' element={<ProductsList list={'pizza'} />} />
-							<Route path='salad' element={<ProductsList list={'salad'} />} />
-							<Route path='drinks' element={<ProductsList list={'drinks'} />} />
-							<Route path='other' element={<ProductsList list={'other'} />} />
-						</Route>
-						<Route path='/order' element={<Order setLoader={setLoader} />} />
-						<Route path='/promotional' element={<Promotional />} />
-						<Route path='/delivery' element={<Delivery />} />
-						<Route path='/about' element={<About />} />
-					</Routes>
-				</main>
-				<Form/>
-				<Footer />
-			</div>
+			{loader && <Loader loader={loader} />}
+			<Header />
+			<main className='main'>
+				<ScrollToTop />
+				<Routes>
+					<Route path='/' element={<MainPage />}>
+						<Route path='/' element={<ProductsList list={'pizza'} />} />
+						<Route path='pizza' element={<ProductsList list={'pizza'} />} />
+						<Route path='salad' element={<ProductsList list={'salad'} />} />
+						<Route path='drinks' element={<ProductsList list={'drinks'} />} />
+						<Route path='other' element={<ProductsList list={'other'} />} />
+					</Route>
+					<Route path='/order' element={<Order setLoader={setLoader} />} />
+					<Route path='/promotional' element={<Promotional />} />
+					<Route path='/delivery' element={<Delivery />} />
+					<Route path='/about' element={<About />} />
+				</Routes>
+			</main>
+			<Form setLoader={setLoader} />
+			<Footer />
+		</div>
 	)
 }
 

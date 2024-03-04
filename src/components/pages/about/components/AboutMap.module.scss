@@ -1,0 +1,74 @@
+.map {
+	position: relative;
+	overflow: hidden;
+	padding: 120px 0px;
+	> a {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: block;
+		background: url('../../../../img/pages/about/Map.png') no-repeat;
+		background-position: 0% 0%;
+		background-size: 100%;
+		background-size: cover;
+		transition: all 0.3s ease;
+		
+		&:hover {
+			box-shadow: inset 0 0 50px 15px #333;
+		}
+		@media (max-width: 700px) {
+			pointer-events: none;
+		}
+	}
+	&__container {
+	}
+	&__content {
+		position: relative;
+		margin-left: calc((100vw - 1300px) / 2);
+		background-color: #00000088;
+		max-width: 350px;
+		border-radius: 10px;
+		padding: 60px 10px;
+		@media (max-width: 1500px) {
+			margin-left: 100px;
+		}
+		@media (max-width: 550px) {
+			margin-inline: auto;
+		}
+	}
+	&__logo {
+		width: fit-content;
+		margin: 0 auto;
+		padding-bottom: 40px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__contacts_flex {
+		display: flex;
+		width: fit-content;
+		margin: 0 auto;
+		flex-direction: column;
+		align-items: left;
+		gap: 15px;
+		p,
+		a {
+			color: #fff;
+		}
+	}
+
+	&__contact {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 30px 1fr;
+		gap: 10px;
+		div {
+			place-self: center;
+		}
+	}
+}

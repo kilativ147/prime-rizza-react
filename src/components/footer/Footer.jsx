@@ -6,8 +6,11 @@ import imgFb from '../../img/svg/FooterFB.svg'
 import imgAddress from '../../img/svg/FooterAddress.svg'
 import imgMail from '../../img/svg/FooterMail.svg'
 import imgTel from '../../img/svg/FooterPhone.svg'
+import { useContext } from 'react'
+import ProductsContext from '../../context/ProductsContext'
 
 const Footer = () => {
+	const { contacts } = useContext(ProductsContext)
 	return (
 		<footer className={s.footer}>
 			<div className={s.footer__container}>
@@ -21,10 +24,10 @@ const Footer = () => {
 						<NavLink to={'/about'}>Про нас</NavLink>
 					</nav>
 					<div className={s.footer__media}>
-						<a href='http://instagram.com' target='_blank'>
+						<a href={contacts.inst} target='_blank'>
 							<img src={imgInst} alt='Instagram' />
 						</a>
-						<a href='http://facebook.com' target='_blank'>
+						<a href={contacts.fb} target='_blank'>
 							<img src={imgFb} alt='Facebook' />
 						</a>
 					</div>
@@ -32,17 +35,17 @@ const Footer = () => {
 				<div className={s.footer__bottom}>
 					<p className={s.footer__rights}>© 2023 Всі права захищені</p>
 					<address className={s.footer__address}>
-						<a href='#'>
+						<a href={contacts.map} target='_blank'>
 							<img src={imgAddress} alt='street' />
-							<span> вул. Єврейська площа 3</span>
+							<span>{contacts.address}</span>
 						</a>
-						<a href='mailto:primepizza@gmail.com'>
+						<a href={contacts.mailTo}>
 							<img src={imgMail} alt='mail' />
-							<span> primepizza@gmail.com</span>
+							<span>{contacts.email}</span>
 						</a>
-						<a href='tel:0670090209'>
+						<a href={contacts.tel}>
 							<img src={imgTel} alt='' />
-							<span> +38 (067) 009 02 09</span>
+							<span>{contacts.phone}</span>
 						</a>
 					</address>
 				</div>

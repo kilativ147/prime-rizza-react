@@ -1,9 +1,10 @@
 import s from './AboutContent.module.scss'
-import AboutContentItem from './AboutContentItem'
+import Item from './Item'
 import img1 from '../../../../img/pages/about/1.png'
 import img2 from '../../../../img/pages/about/2.png'
 import img3 from '../../../../img/pages/about/3.png'
 import img4 from '../../../../img/pages/about/4.png'
+import AboutMap from './AboutMap'
 
 const AboutContent = () => {
 	const items = [
@@ -29,12 +30,16 @@ const AboutContent = () => {
 		},
 	]
 
-	const ContentItems = items.map((item, index) => <AboutContentItem key={index} {...item} />)
+	const ContentItems = items.map((item, index) => <Item key={index} index={index} {...item} />)
 
 	return (
-		<section className={s.about__container + ' ' + 'about__container'}>
-			<div className={s.about__content_flex}>{ContentItems}</div>
-		</section>
+		<>
+			<section className={s.about__container}>
+				<div className={s.about__content_flex}>{ContentItems}</div>
+			</section>
+		
+			<AboutMap />
+		</>
 	)
 }
 

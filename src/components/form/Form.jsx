@@ -3,14 +3,32 @@ import ArrowImg from '../../img/svg/Form ArrowRight.svg'
 import React, { useState } from 'react'
 import callbackFunc from './CallbackFunc'
 
-const Form = () => {
+const Form = ({ setLoader }) => {
 	const [userName, setUserName] = useState('')
 	const [userPhone, setUserPhone] = useState('')
 	const [userEmail, setUserEmail] = useState('')
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
-		callbackFunc(userName, setUserName, userPhone, setUserPhone, userEmail, setUserEmail)
+		setLoader(true)
+		const send = callbackFunc(
+			userName,
+			setUserName,
+			userPhone,
+			setUserPhone,
+			userEmail,
+			setUserEmail,
+		)
+		if (send !== false) {
+			setUserName('')
+			setUserPhone('')
+			setUserEmail('')
+			console.log('redirect')
+			setTimeout(() => {
+				setLoader(false)
+			}, 500)
+			alert('Ваш запит надіслано')
+		} else console.log('error')
 	}
 
 	return (

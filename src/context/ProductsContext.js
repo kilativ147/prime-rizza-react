@@ -1,4 +1,5 @@
 import { createContext, useState } from 'react'
+import store from '../store/store'
 import productsListJson from '../store/productsList.json'
 
 const ProductsContext = createContext()
@@ -25,6 +26,7 @@ function Provider({ children }) {
 	}
 
 	const valueToShare = {
+		contacts: store.contacts,
 		productsList,
 		pizzaList,
 		saladList,

@@ -1,4 +1,4 @@
-import s from './Logo.module.css'
+import s from './Logo.module.scss'
 import imgLogo from '../../../img/Logo.png'
 import { NavLink } from 'react-router-dom'
 

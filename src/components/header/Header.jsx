@@ -1,4 +1,4 @@
-import s from './Header.module.css'
+import s from './Header.module.scss'
 import NavBar from './components/NavBar'
 import Logo from './components/Logo'
 import Contacts from './components/Contacts'

@@ -1,4 +1,4 @@
-import s from './Burger.module.css'
+import s from './Burger.module.scss'
 
 const Burger = ({ handleMenuState,menuState }) => {
 	const handleOpenMenu = () => {

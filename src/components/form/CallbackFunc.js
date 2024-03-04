@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const callbackFunc = (userName, setUserName, userPhone, setUserPhone, userEmail, setUserEmail) => {
+const callbackFunc = (userName, userPhone, userEmail) => {
   const serviceId = 'service_5smz8zb'
   const templateId = 'template_dpm1qfh'
   const publicKey = 'P2RJ1J1xECbk9Ml93'
@@ -43,13 +43,10 @@ const callbackFunc = (userName, setUserName, userPhone, setUserPhone, userEmail,
 		}
 
 		try {
-			const res = await axios.post('https://api.emailjs.com/api/v1.0/email/send', data)
-			setUserName('')
-			setUserPhone('')
-			setUserEmail('')
-			alert('Відправлено', res.data)
+			await axios.post('https://api.emailjs.com/api/v1.0/email/send', data)
+			return true
 		} catch (error) {
-			alert('Помилка!', error)
+			return false
 		}
 	}
 	
