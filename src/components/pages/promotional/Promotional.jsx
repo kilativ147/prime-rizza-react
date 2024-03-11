@@ -37,7 +37,7 @@ const Promotional = () => {
 		},
 	]
 
-	const PromotionalList = items.map((item, index) => <PromotionalItem key={index} {...item} />)
+	const PromotionalList = items.map((item, index) => <PromotionalItem key={index} {...item} index={index}/>)
 
 	return (
 		<section

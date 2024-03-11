@@ -1,8 +1,5 @@
-import { useInView } from 'react-intersection-observer'
-import { useRef, useState } from 'react'
 import s from './Item.module.scss'
-
-// import { useScrollSpy} from 'react-scroll'
+import { useInView } from 'react-intersection-observer'
 
 const Item = ({ img, title, text, index }) => {
 const [ref, inView] = useInView({
