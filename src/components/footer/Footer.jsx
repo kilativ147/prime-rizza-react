@@ -1,6 +1,6 @@
 import s from './Footer.module.scss'
 import { NavLink } from 'react-router-dom'
-import imgLogo from '../../img/Logo.png'
+import imgLogo from '../../img/Logo.webp'
 import imgInst from '../../img/svg/FooterInst.svg'
 import imgFb from '../../img/svg/FooterFB.svg'
 import imgAddress from '../../img/svg/FooterAddress.svg'

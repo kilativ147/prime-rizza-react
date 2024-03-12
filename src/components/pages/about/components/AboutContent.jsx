@@ -1,9 +1,9 @@
 import s from './AboutContent.module.scss'
 import Item from './Item'
-import img1 from '../../../../img/pages/about/1.png'
-import img2 from '../../../../img/pages/about/2.png'
-import img3 from '../../../../img/pages/about/3.png'
-import img4 from '../../../../img/pages/about/4.png'
+import img1 from '../../../../img/pages/about/1.webp'
+import img2 from '../../../../img/pages/about/2.webp'
+import img3 from '../../../../img/pages/about/3.webp'
+import img4 from '../../../../img/pages/about/4.webp'
 import AboutMap from './AboutMap'
 
 const AboutContent = () => {

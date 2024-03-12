@@ -1,13 +1,13 @@
 import s from './PromotionalItem.module.scss'
 import { useInView } from 'react-intersection-observer'
 
-const PromotionalItem = ({ img, title, text, textWarning, index }) => {
+const PromotionalItem = ({ img, title, text, textWarning, isLoaded }) => {
 	const [ref, inView] = useInView({
-		triggerOnce: true, // Change this to true if you want the animation to occur only once
-		rootMargin: '-150px 0px', // This will trigger the animation 50px before the element comes into view
+		triggerOnce: false, // Change this to true if you want the animation to occur only once
+		rootMargin: '-100px 0px', // This will trigger the animation 50px before the element comes into view
 	})
-	const dynamicStyle = inView ? `${s.item} ${s._visible}` : s.item
-	
+
+	const dynamicStyle = isLoaded  ?  (inView ? `${s.item} ${s._visible}` : s.item) : s.item
 	return (
 		<article ref={ref} className={dynamicStyle}>
 			<div className={s.item__image}>

@@ -1,15 +1,31 @@
 // import s from './Promotional.module.scss'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import PromotionalItem from './PromotionalItem'
-import img1Plus1 from '../../../img/pages/promotional/Offer1+1.png'
-import imgMinus15 from '../../../img/pages/promotional/Offer-15.png'
-import imgCoffee from '../../../img/pages/promotional/OfferCoffee.png'
-import imgCola from '../../../img/pages/promotional/OfferCola.png'
+import img1Plus1 from '../../../img/pages/promotional/Offer1+1.webp'
+import imgMinus15 from '../../../img/pages/promotional/Offer-15.webp'
+import imgCoffee from '../../../img/pages/promotional/OfferCoffee.webp'
+import imgCola from '../../../img/pages/promotional/OfferCola.webp'
+import { useLocation } from 'react-router-dom'
 
 const Promotional = () => {
+	const [isLoaded, setIsLoaded] = useState(false)
+	const location = useLocation()
+
 	useEffect(() => {
 		document.title = 'Prime Pizza ⋅ Акції'
-}, [])
+		setIsLoaded(true) // Встановлюємо isLoaded в true при монтажі компоненту або поверненні на сторінку
+
+		const handleLoad = () => {
+			setIsLoaded(true)
+		}
+
+		window.addEventListener('load', handleLoad) // Додаємо обробник події load
+
+		return () => {
+			// Очищення підписки при розмонтажі компоненту
+			window.removeEventListener('load', handleLoad)
+		}
+	}, [location.pathname])
 	const items = [
 		{
 			img: img1Plus1,
@@ -37,7 +53,11 @@ const Promotional = () => {
 		},
 	]
 
-	const PromotionalList = items.map((item, index) => <PromotionalItem key={index} {...item} index={index}/>)
+	console.log('🚀 | Promotional | isLoaded:', isLoaded)
+
+	const PromotionalList = items.map((item, index) => (
+		<PromotionalItem key={index} {...item} isLoaded={isLoaded} />
+	))
 
 	return (
 		<section

@@ -1,5 +1,5 @@
 import s from './Loader.module.scss'
-import pizza from '../../img/pages//loader/pizza-piece.png'
+import pizza from '../../img/pages//loader/pizza-piece.webp'
 
 const Loader = ({ loader }) => {
 	return (

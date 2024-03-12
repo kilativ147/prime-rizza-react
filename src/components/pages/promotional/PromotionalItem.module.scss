@@ -3,6 +3,7 @@
 	display: flex;
 	align-items: center;
 	gap: 30px;
+	
 	&:not(:last-child) {
 		padding-bottom: 40px;
 	}

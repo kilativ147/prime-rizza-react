@@ -25,7 +25,7 @@ $itemBorder: rgba(170, 180, 147, 0.29);
 	&::after {
 		content: '';
 		position: absolute;
-		bottom: 0;
+		bottom: 1px;
 		left: 50%;
 		translate: -50% 100%;
 		width: 60px;

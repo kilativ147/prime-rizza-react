@@ -1,6 +1,6 @@
 import s from './Hero.module.scss'
-import imgBackground from '../../../../img/pages/main/Hero.png'
-import imgPizza from '../../../../img/pages/main/HeroPizza.png'
+import imgBackground from '../../../../img/pages/main/Hero.webp'
+import imgPizza from '../../../../img/pages/main/HeroPizza.webp'
 
 const Hero = () => {
   return (

@@ -1,10 +1,10 @@
 import s from './Galery.module.scss'
-import img1 from '../../../../img/pages//main/GalleryInst1.png'
-import img2 from '../../../../img/pages//main/GalleryInst2.png'
-import img3 from '../../../../img/pages//main/GalleryInst3.png'
-import img4 from '../../../../img/pages//main/GalleryInst4.png'
-import img5 from '../../../../img/pages//main/GalleryInst5.png'
-import img6 from '../../../../img/pages//main/GalleryInst6.png'
+import img1 from '../../../../img/pages//main/GalleryInst1.webp'
+import img2 from '../../../../img/pages//main/GalleryInst2.webp'
+import img3 from '../../../../img/pages//main/GalleryInst3.webp'
+import img4 from '../../../../img/pages//main/GalleryInst4.webp'
+import img5 from '../../../../img/pages//main/GalleryInst5.webp'
+import img6 from '../../../../img/pages//main/GalleryInst6.webp'
 import imgInst from '../../../../img/svg/InstagramWhite.svg'
 
 const Galery = () => {
@@ -25,7 +25,7 @@ const Galery = () => {
 				<div className={s.label}>
 					<a href='http://instagram.com' target='_blank'>
 						<img src={imgInst} alt='' />
-						@primepizza.if
+						@primepizza
 					</a>
 				</div>
 			</div>

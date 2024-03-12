@@ -1,5 +1,5 @@
 import s from './Logo.module.scss'
-import imgLogo from '../../../img/Logo.png'
+import imgLogo from '../../../img/Logo.webp'
 import { NavLink } from 'react-router-dom'
 
 const Logo = ({ handleMenuState }) => {

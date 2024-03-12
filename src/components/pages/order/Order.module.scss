@@ -23,7 +23,7 @@
 	max-width: 400px;
 	padding: 25px 15px 0;
 	margin: 60px auto 0;
-	background: url('../../../img/pages/order/paper_texture.png');
+	background: url('../../../img/pages/order/paper_texture.webp');
 	box-shadow: 0px 0px 20px 0px #b8b8b8;
 	&::before,
 	&::after {
@@ -32,7 +32,7 @@
 		left: 0;
 		height: 50px;
 		width: 100%;
-		background: url('../../../img/pages/order/paper_texture_cut.png');
+		background: url('../../../img/pages/order/paper_texture_cut.webp');
 	}
 	&::before {
 		top: -25px;

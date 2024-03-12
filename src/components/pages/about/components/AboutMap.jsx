@@ -1,5 +1,5 @@
 import s from './AboutMap.module.scss'
-import imgLogo from '../../../../img/Logo.png'
+import imgLogo from '../../../../img/Logo.webp'
 import imgEmail from '../../../../img/svg/FooterMail.svg'
 import imgAddress from '../../../../img/svg/FooterAddress.svg'
 import imgPhone from '../../../../img/svg/FooterPhone.svg'

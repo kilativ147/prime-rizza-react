@@ -1,6 +1,6 @@
 import s from './About.module.scss'
 import { useEffect } from 'react'
-import HeroImg from '../../../img/pages/about/Background.png'
+import HeroImg from '../../../img/pages/about/Background.webp'
 import MediaContainer from './components/MediaContainer'
 import AboutContent from './components/AboutContent'
 
