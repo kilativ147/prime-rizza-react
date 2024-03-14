@@ -1,40 +1,37 @@
 import './App.scss'
-import { Routes, Route } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import ScrollToTop from './hooks/ScrollToTop'
-import ProductsList from './components/pages/main/components/ProductsList'
 
+import { Routes, Route, useLocation } from 'react-router-dom'
+import { lazy, useEffect, useState } from 'react'
+
+import Layout from './components/layout/Layout'
 import Loader from './components/loader/Loader'
-import Header from './components/header/Header'
-import MainPage from './components/pages/main/MainPage'
-import Order from './components/pages/order/Order'
-import Promotional from './components/pages/promotional/Promotional'
-import Delivery from './components/pages/delivery/Delivery'
-import About from './components/pages/about/About'
-import Form from './components/form/Form'
-import Footer from './components/footer/Footer'
+import ProductsList from './components/pages/main/components/ProductsList'
+const MainPage = lazy(() => import('./components/pages/main/MainPage'))
+const Order = lazy(() => import('./components/pages/order/Order'))
+const Promotional = lazy(() => import('./components/pages/promotional/Promotional'))
+const Delivery = lazy(() => import('./components/pages/delivery/Delivery'))
+const About = lazy(() => import('./components/pages/about/About'))
 
 const App = () => {
-	const [loader, setLoader] = useState(true)
-	loader
-		? (document.body.style.overflow = 'hidden')
-		: document.body.style.removeProperty('overflow')
-		
-	useEffect(() => {
-		const handleLoad = () => {
-			setLoader(false)
-		}
-		window.addEventListener('load', handleLoad)
-		return () => window.removeEventListener('load', handleLoad) // Прибираємо обробник події при розміщенні компонента
-	}, [])
+	const [isLoading, setIsLoading] = useState(true)
+	// isLoading ? document.body.classList.add('_loading') : document.body.classList.remove('_loading')
+
+	// const location = useLocation()
+	// useEffect(() => {
+	// 	const handleLoad = () => {
+	// 		setIsLoading(false)
+	// 		console.log('change page');
+
+	// 	}
+	// 	window.addEventListener('load', handleLoad)
+	// 	return () => window.removeEventListener('load', handleLoad) // Прибираємо обробник події при розміщенні компонента
+	// }, [location.pathname])
 
 	return (
 		<div className='wraper'>
-			{loader && <Loader loader={loader} />}
-			<Header />
-			<main className='main'>
-				<ScrollToTop />
-				<Routes>
+			{/* {isLoading && <Loader />} */}
+			<Routes>
+				<Route path='/' element={<Layout />}>
 					<Route path='/' element={<MainPage />}>
 						<Route path='/' element={<ProductsList list={'pizza'} />} />
 						<Route path='pizza' element={<ProductsList list={'pizza'} />} />
@@ -42,14 +39,15 @@ const App = () => {
 						<Route path='drinks' element={<ProductsList list={'drinks'} />} />
 						<Route path='other' element={<ProductsList list={'other'} />} />
 					</Route>
-					<Route path='/order' element={<Order setLoader={setLoader} />} />
-					<Route path='/promotional' element={<Promotional />} />
-					<Route path='/delivery' element={<Delivery />} />
-					<Route path='/about' element={<About />} />
-				</Routes>
-			</main>
-			<Form setLoader={setLoader} />
-			<Footer />
+					<Route path='/order' element={<Order setIsLoading={setIsLoading} />} />
+					<Route
+						path='/promotional'
+						element={<Promotional setIsLoading={setIsLoading} isLoading={isLoading} />}
+					/>
+					<Route path='/delivery' element={<Delivery setIsLoading={setIsLoading} />} />
+					<Route path='/about' element={<About setIsLoading={setIsLoading} />} />
+				</Route>
+			</Routes>
 		</div>
 	)
 }

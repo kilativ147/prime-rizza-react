@@ -1,17 +1,19 @@
+import { useState } from 'react'
 import s from './PromotionalItem.module.scss'
-import { useInView } from 'react-intersection-observer'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
-const PromotionalItem = ({ img, title, text, textWarning, isLoaded }) => {
-	const [ref, inView] = useInView({
-		triggerOnce: false, // Change this to true if you want the animation to occur only once
-		rootMargin: '-100px 0px', // This will trigger the animation 50px before the element comes into view
-	})
+const PromotionalItem = ({ img, title, text, textWarning }) => {
+	const [dynamicStyle, setDynamicStyle] = useState(s.item)
 
-	const dynamicStyle = isLoaded  ?  (inView ? `${s.item} ${s._visible}` : s.item) : s.item
 	return (
-		<article ref={ref} className={dynamicStyle}>
+		<article className={dynamicStyle}>
 			<div className={s.item__image}>
-				<img src={img} alt={title} />
+				<LazyLoadImage
+					src={img}
+					// effect='blur'
+					alt={title}
+					afterLoad={() => setDynamicStyle(`${s.item} ${s._visible}`)}
+				/>
 			</div>
 			<div className={s.item__text}>
 				<h3>

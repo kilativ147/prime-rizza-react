@@ -7,7 +7,6 @@ body {
 	--button_padding: 5px 20px;
 	--header_desktop: 100px;
 	--header_mob: 50px;
-
 }
 
 body {
@@ -17,9 +16,10 @@ body {
 	font-size: 16px;
 	line-height: 150%; /* 24/16 */
 	color: #262626;
-
-	@media (max-width: 800px) {
-		/*Mobile size*/
+	&._loading {
+		overflow: hidden;
+	}
+	@media (max-width: 800px) /*Mobile size*/ {
 		&._lock {
 			overflow: hidden;
 		}
@@ -38,7 +38,7 @@ body {
 }
 .main {
 	flex: 1 0 auto;
-}	
+}
 
 [class*='__container'] {
 	position: relative;

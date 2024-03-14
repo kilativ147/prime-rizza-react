@@ -1,31 +1,22 @@
-// import s from './Promotional.module.scss'
-import { useEffect, useState } from 'react'
+import s from './Promotional.module.scss'
+import 'react-lazy-load-image-component/src/effects/blur.css'
+import { useEffect } from 'react'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import PromotionalItem from './PromotionalItem'
+import imgHero from '../../../img/pages/promotional/Hero.webp'
+import imgHeroS from '../../../img/pages/promotional/Hero-small.webp'
 import img1Plus1 from '../../../img/pages/promotional/Offer1+1.webp'
 import imgMinus15 from '../../../img/pages/promotional/Offer-15.webp'
 import imgCoffee from '../../../img/pages/promotional/OfferCoffee.webp'
 import imgCola from '../../../img/pages/promotional/OfferCola.webp'
-import { useLocation } from 'react-router-dom'
 
 const Promotional = () => {
-	const [isLoaded, setIsLoaded] = useState(false)
-	const location = useLocation()
-
 	useEffect(() => {
 		document.title = 'Prime Pizza ⋅ Акції'
-		setIsLoaded(true) // Встановлюємо isLoaded в true при монтажі компоненту або поверненні на сторінку
+	}, [])
 
-		const handleLoad = () => {
-			setIsLoaded(true)
-		}
+	//! TRANSLATE THIS TO STORE    !!!!!!
 
-		window.addEventListener('load', handleLoad) // Додаємо обробник події load
-
-		return () => {
-			// Очищення підписки при розмонтажі компоненту
-			window.removeEventListener('load', handleLoad)
-		}
-	}, [location.pathname])
 	const items = [
 		{
 			img: img1Plus1,
@@ -53,20 +44,28 @@ const Promotional = () => {
 		},
 	]
 
-	console.log('🚀 | Promotional | isLoaded:', isLoaded)
+	console.log(isLoading, Date.now())
 
-	const PromotionalList = items.map((item, index) => (
-		<PromotionalItem key={index} {...item} isLoaded={isLoaded} />
-	))
+	const PromotionalList = items.map((item, index) => <PromotionalItem key={index} {...item} />)
 
 	return (
-		<section
-			className='promotional__container'
-			style={{
-				padding: '70px 20px',
-			}}
-		>
-			{PromotionalList}
+		<section className={s.promotional}>
+			<div className={s.promotional__container}>
+				<div className={s.promotional__hero}>
+					<div className={s.promotional__hero_img}>
+						<LazyLoadImage
+							src={imgHero}
+							placeholderSrc={imgHeroS}
+							effect='blur'
+							alt={'Hero section'}
+						/>
+					</div>
+					<h2>
+						Ніщо так не доповнює смачну піцу, як <span>АКЦІЇ</span>
+					</h2>
+				</div>
+				{PromotionalList}
+			</div>
 		</section>
 	)
 }
