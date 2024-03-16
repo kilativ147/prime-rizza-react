@@ -6,7 +6,7 @@
 	p,
 	a,
 	span {
-		color: #fff;
+		color: #bbb;
 	}
 	&__container {
 		max-width: 100%;
@@ -32,7 +32,14 @@
 			column-gap: 0;
 		}
 	}
-
+	&__logo {
+		transition: all 0.2s ease;
+		@media (hover) {
+			&:hover {
+				filter: drop-shadow(0 0 5px rgb(255, 208, 0));
+			}
+		}
+	}
 	&__nav {
 		display: flex;
 		column-gap: 15px;
@@ -41,9 +48,12 @@
 			position: relative;
 			background: var(--main_color) left bottom / 0% 2px no-repeat;
 			transition: background 0.3s ease;
-			&:hover,
-			&:focus {
-				background-size: 100% 2px;
+			@media (hover: hover) {
+				&:hover,
+				&:focus {
+					color: #fff;
+					background-size: 100% 2px;
+				}
 			}
 		}
 		@media (max-width: 800px) {
@@ -56,6 +66,12 @@
 		display: flex;
 		column-gap: 40px;
 		a {
+			transition: all 0.3s ease;
+			@media (hover) {
+				&:hover {
+					filter: drop-shadow(0 0 5px rgb(255, 208, 0));
+				}
+			}
 			img {
 			}
 		}
@@ -90,6 +106,16 @@
 			}
 			span {
 				margin-left: 5px;
+				transition: all 0.3s ease;
+			}
+			@media (hover: hover) {
+				&:hover,
+				&:focus {
+					span {
+						color: #fff;
+						text-decoration: underline;
+					}
+				}
 			}
 		}
 	}

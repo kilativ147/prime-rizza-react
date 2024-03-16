@@ -14,9 +14,11 @@
 		background-color: #fff;
 		transition: transform 0.25s ease;
 	}
-	&:hover &__content {
-		position: relative;
-		transform: translate(0, -20px);
+	@media (hover: hover) {
+		&:hover &__content {
+			position: relative;
+			transform: translate(0, -20px);
+		}
 	}
 
 	&__img {

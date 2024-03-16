@@ -15,8 +15,8 @@ const Footer = () => {
 		<footer className={s.footer}>
 			<div className={s.footer__container}>
 				<div className={s.footer__top}>
-					<NavLink to={'/'}>
-						<img src={imgLogo} alt='Instagram' />
+					<NavLink to={'/'} className={s.footer__logo}>
+						<img src={imgLogo} alt='Logo' />
 					</NavLink>
 					<nav className={s.footer__nav}>
 						<NavLink to={'/promotional'}>Акції</NavLink>
@@ -39,13 +39,19 @@ const Footer = () => {
 							<img src={imgAddress} alt='street' />
 							<span>{contacts.address}</span>
 						</a>
-						<a href={contacts.mailTo}>
+						<a href={`emailto:${contacts.email}`}>
 							<img src={imgMail} alt='mail' />
 							<span>{contacts.email}</span>
 						</a>
-						<a href={contacts.tel}>
+
+						<a href={`tel:+38${contacts.phone}`}>
 							<img src={imgTel} alt='' />
-							<span>{contacts.phone}</span>
+							<span>
+								{`+38 (${contacts.phone.slice(0, 3)}) ${contacts.phone.slice(
+									3,
+									6,
+								)}-${contacts.phone.slice(6, 8)}-${contacts.phone.slice(8)}`}
+							</span>
 						</a>
 					</address>
 				</div>

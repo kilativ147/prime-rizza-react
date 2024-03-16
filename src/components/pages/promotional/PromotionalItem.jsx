@@ -2,7 +2,7 @@ import { useState } from 'react'
 import s from './PromotionalItem.module.scss'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 
-const PromotionalItem = ({ img, title, text, textWarning }) => {
+const PromotionalItem = ({ img, title, text, textWarning }) => {	
 	const [dynamicStyle, setDynamicStyle] = useState(s.item)
 
 	return (
@@ -10,9 +10,8 @@ const PromotionalItem = ({ img, title, text, textWarning }) => {
 			<div className={s.item__image}>
 				<LazyLoadImage
 					src={img}
-					// effect='blur'
 					alt={title}
-					afterLoad={() => setDynamicStyle(`${s.item} ${s._visible}`)}
+					onLoad={() => setDynamicStyle(`${s.item} ${s._visible}`)}
 				/>
 			</div>
 			<div className={s.item__text}>

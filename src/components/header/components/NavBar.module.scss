@@ -12,18 +12,24 @@
 	&__link {
 		position: relative;
 		height: 75%;
+		padding: 5px 20px;
 		display: grid;
 		place-items: center;
-		padding: 5px 20px;
-		white-space: nowrap;
-		position: relative;
 		background: var(--main_color) left 3.25rem / 0% 2px no-repeat;
 		transition: background 0.3s ease;
+		color: #bbb;
+		text-wrap: nowrap;
 
 		&[aria-current='page'],
-		&:hover,
 		&:focus {
 			background-size: 100% 2px;
+			color: #fff;
+		}
+		@media (hover: hover) {
+			&:hover {
+				color: #fff;
+				background-size: 100% 2px;
+			}
 		}
 	}
 

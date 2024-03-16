@@ -12,6 +12,19 @@
 			gap: 10px;
 		}
 	}
+	&__worktime {
+	}
+	&__phone {
+		a {
+			transition: all 0.3s ease;
+			@media (hover: hover) {
+				&:hover {
+					color: #fff;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
 	@media (max-width: 800px) {
 		&__adress {
 			flex: 1 1;
