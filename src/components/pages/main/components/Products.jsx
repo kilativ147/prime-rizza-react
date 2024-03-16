@@ -1,7 +1,5 @@
 import s from './Products.module.scss'
-
 import { Outlet, NavLink } from 'react-router-dom'
-// import {  } from 'react-router-dom'
 
 const Products = () => {
 

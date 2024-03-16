@@ -1,5 +1,6 @@
 $borderRadius: 12px;
 $itemBorder: rgba(170, 180, 147, 0.29);
+
 .item {
 	display: flex;
 	flex-direction: column;
@@ -12,14 +13,30 @@ $itemBorder: rgba(170, 180, 147, 0.29);
 	border-radius: $borderRadius;
 	background: #fff;
 	transition: all 0.3s ease;
-	&:hover {
-		box-shadow: 0px 0px 20px 1px #999;
-		&::after {
-			box-shadow: 0px 8px 10px 0px #ccc;
+	translate: 0 150px;
+	opacity: 0;
+	scale: 0;
+	animation: showUp 0.5s ease forwards;
+	
+	@keyframes showUp {
+		0% {
+		}
+		100% {
+			translate: 0;
+			scale: 1;
+			opacity: 1;
 		}
 	}
-	&:hover &__image img {
-		transform: scale(1.15);
+	@media (hover) {
+		&:hover {
+			box-shadow: 0px 0px 20px 1px #999;
+			&::after {
+				box-shadow: 0px 8px 10px 0px #ccc;
+			}
+		}
+		&:hover &__image img {
+			transform: scale(1.15);
+		}
 	}
 
 	&::after {
@@ -41,20 +58,28 @@ $itemBorder: rgba(170, 180, 147, 0.29);
 		margin-bottom: 20px;
 		border-radius: $borderRadius $borderRadius 0 0;
 		overflow: hidden;
-
-		img {
+		span {
 			width: 100%;
 			height: 100%;
-			object-fit: cover;
-			transition: all 0.3s ease;
+			background-position: center !important;
+			background-size: 80% !important;
+			background-repeat: no-repeat;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				transition: all 0.3s ease !important;
+			}
 		}
 	}
 
 	h3 {
 		padding: 0 20px;
 		font-size: 24px;
-		font-weight: 600;
+		font-weight: 700;
 		line-height: 150%;
+		text-align: center;
 	}
 
 	p {
@@ -62,6 +87,8 @@ $itemBorder: rgba(170, 180, 147, 0.29);
 		font-size: 16px;
 		font-weight: 300;
 		line-height: 150%;
+		text-align: center;
+		text-wrap: pretty;
 	}
 	&__price {
 		flex: 1 1 auto;
@@ -91,14 +118,20 @@ $itemBorder: rgba(170, 180, 147, 0.29);
 			no-repeat;
 		transition: all 0.1s ease;
 
-		&:hover {
+		@media (hover) {
+			&:hover {
+				width: 50px;
+				box-shadow: 0px 0px 20px rgba(255, 219, 71, 0.5), indet 0 0 0 1px #fff;
+				background: #fdcc06 url('../../../../img/svg/ProductAddHover.svg') calc(50% + 1px)
+					calc(50% - 2px) no-repeat;
+				background-size: 50% 50%;
+			}
+		}
+		&:active {
 			width: 50px;
 			box-shadow: 0px 0px 20px rgba(255, 219, 71, 0.5), indet 0 0 0 1px #fff;
 			background: #fdcc06 url('../../../../img/svg/ProductAddHover.svg') calc(50% + 1px)
 				calc(50% - 2px) no-repeat;
-			background-size: 50% 50%;
-		}
-		&:active {
 			background-size: 80% 80%;
 		}
 	}

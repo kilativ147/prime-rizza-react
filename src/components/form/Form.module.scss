@@ -37,11 +37,11 @@
 	line-height: 150%; /* 24/16 */
 	transition: all 0.3s ease;
 	&:focus {
-		box-shadow: 0px 2px 3px #ccc, inset 0 0 15px 3px #ddd;
+		box-shadow: 0px 2px 3px #ccc, inset 0 0 10px 0px #ddd;
 	}
 	@media (hover) {
 		&:hover {
-			box-shadow: 0px 2px 3px #ccc, inset 0 0 15px 3px #ddd;
+			box-shadow: 0px 2px 3px #ccc, inset 0 0 10px 0px #ddd;
 		}
 	}
 	&::placeholder {

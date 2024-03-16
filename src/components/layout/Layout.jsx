@@ -11,6 +11,7 @@ const Layout = () => {
 			<Header />
 			<ScrollToTop />
 			<main className='main'>
+				{/* Suspense for lazy load pages, its decrement time of loadimg page */}
 				<Suspense>
 					<Outlet />
 				</Suspense>

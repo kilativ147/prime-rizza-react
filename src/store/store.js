@@ -2,8 +2,8 @@ const store = {
 	contacts: {
 		phone: '0683291751',
 		email: 'primepiazza@gmail.com',
-		inst: 'http"//instagram.com',
-		fb: 'http"//facebook.com',
+		inst: 'http://instagram.com',
+		fb: 'http://facebook.com',
 		map: 'https://www.google.com/maps/',
 		address: 'м. Одеса, вул. Героїв України, 100',
 		time: 'Щодня 10:00 - 22:00',

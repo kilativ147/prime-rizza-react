@@ -14,11 +14,16 @@ $mob_screen: 767.98px;
 		height: 100%;
 		overflow: hidden;
 		user-select: none;
-		img {
+		span {
 			width: 100%;
 			height: 100%;
-			object-fit: cover;
-			pointer-events: none;
+			background-position: center !important;
+			background-size: cover !important;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
 		}
 	}
 
@@ -28,14 +33,16 @@ $mob_screen: 767.98px;
 
 	&__content_flex {
 		padding: 50px 10px;
-		height: 100%;
+		height: 740px;
 		display: flex;
 		justify-content: space-between;
-		gap: 10px;
+		column-gap: 10px;
+		row-gap: 10px;
 		align-items: center;
 		overflow: hidden;
 
 		@media (max-width: $mob_screen) {
+			height: clamp(500px, 100vw, 740px);
 			flex-direction: column;
 			align-items: center;
 		}
@@ -44,6 +51,11 @@ $mob_screen: 767.98px;
 		flex: 0 0 50%;
 		max-width: 700px;
 		font-size: 16px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		text-wrap: pretty;
 		h2 {
 			font-weight: 700;
 			font-size: 2.65em; /*42px*/
@@ -64,13 +76,19 @@ $mob_screen: 767.98px;
 		position: relative;
 		flex: 0 0 50%;
 		user-select: none;
-		img {
+		span {
 			width: 100%;
 			height: 100%;
-			object-fit: contain;
-			pointer-events: none;
+			background-position: center !important;
+			background-repeat: no-repeat;
 			animation: rotate 10s linear infinite;
-
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+				pointer-events: none;
+				rotate: 45deg;
+			}
 			@keyframes rotate {
 				0% {
 					transform: rotate(0deg);
@@ -80,12 +98,6 @@ $mob_screen: 767.98px;
 					transform: rotate(360deg);
 				}
 			}
-		}
-
-		@media (max-width: $mob_screen) {
-			width: 100%;
-			margin-top: -40vw;
-			translate: 0 50%;
 		}
 	}
 }
