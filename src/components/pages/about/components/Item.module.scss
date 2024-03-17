@@ -8,7 +8,7 @@
 	&:nth-of-type(even) {
 		flex-direction: row-reverse;
 	}
-	&:last-of-type{
+	&:last-of-type {
 		margin-bottom: 100px;
 	}
 	&._visible {
@@ -59,9 +59,12 @@
 		overflow: hidden;
 		opacity: 0;
 
-		@media (hover: hover) {
+		@media (hover) {
 			&:hover {
 				border-radius: 0;
+				img {
+					transform: scale(1.1);
+				}
 			}
 		}
 		img {
@@ -69,11 +72,6 @@
 			height: 100%;
 			object-fit: cover;
 			transition: all 0.3s ease;
-			@media (hover: hover) {
-				&:hover {
-					transform: scale(1.1);
-				}
-			}
 		}
 	}
 

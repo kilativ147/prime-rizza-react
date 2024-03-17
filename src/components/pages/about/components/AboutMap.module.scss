@@ -10,7 +10,7 @@
 		height: 100%;
 		display: block;
 		transition: all 0.3s ease !important;
-		@media (hover: hover) {
+		@media (hover) {
 			&:hover {
 				box-shadow: inset 0 0 50px 15px #33333372;
 			}
@@ -84,10 +84,12 @@
 			text-wrap: balance;
 			transition: all 0.3s ease;
 		}
-		&:hover {
-			span {
-				color: #bbb;
-				text-decoration: underline;
+		@media (hover) {
+			&:hover {
+				span {
+					color: #bbb;
+					text-decoration: underline;
+				}
 			}
 		}
 	}

@@ -17,7 +17,7 @@
 	&__phone {
 		a {
 			transition: all 0.3s ease;
-			@media (hover: hover) {
+			@media (hover) {
 				&:hover {
 					color: #fff;
 					text-decoration: underline;

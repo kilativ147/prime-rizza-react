@@ -26,11 +26,17 @@
 		cursor: pointer;
 		// font-weight: 700;
 
-		&:hover,
 		&[aria-current='page'] {
 			background-color: #ffdb47;
 			color: #fff;
-			text-shadow:  0px 0px 5px #777;
+			text-shadow: 0px 0px 5px #777;
+		}
+		@media (hover) {
+			&:hover {
+				background-color: #ffdb47;
+				color: #fff;
+				text-shadow: 0px 0px 5px #777;
+			}
 		}
 	}
 	&__items {

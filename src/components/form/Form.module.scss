@@ -92,10 +92,12 @@
 			object-fit: cover;
 		}
 	}
-	&:hover,
-	&:focus {
-		transform: translate(0, -5px);
-		box-shadow: 0px 5px 2px #e4d12a;
+	@media (hover) {
+		&:hover,
+		&:focus {
+			transform: translate(0, -5px);
+			box-shadow: 0px 5px 2px #e4d12a;
+		}
 	}
 	&:active {
 		transform: translate(0, -0px);
