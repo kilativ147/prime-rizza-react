@@ -1,17 +1,14 @@
 .item {
+	margin: 5px 0;
+	padding-bottom: 3px;
 	max-height: 150px;
+	border-bottom: 1px solid #dddddd56;
 	display: grid;
 	grid-auto-flow: column;
 	grid-column-gap: 5px;
 	grid-template-columns: 75px 1fr 20px 20px 20px 35px auto 20px;
 	align-items: center;
-	// place-content: center;
-	margin: 5px 0;
-	padding-bottom: 3px;
-	border-bottom: 1px solid #dddddd56;
-
 	font-size: 16px;
-	// line-height: 1;
 
 	@media (max-width: 500px) {
 		grid-template-columns: 0px 1fr 15px 20px 15px 40px 30px 10px;
@@ -22,9 +19,8 @@
 	}
 }
 .img {
-	// border-radius: 5px 0 0 5px;
+	height: 75px;
 	aspect-ratio: 1;
-	// border-radius: 50%;
 	overflow: hidden;
 
 	img {

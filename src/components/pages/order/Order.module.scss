@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 
 .order {
-	// min-width: 100%;
-	// min-height: 100%;
 	position: relative;
 	padding: 40px 10px 100px;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -33,6 +31,7 @@
 		height: 50px;
 		width: 100%;
 		background: url('../../../img/pages/order/paper_texture_cut.webp');
+		filter: drop-shadow(0 -10px 7px #b8b8b8b9);
 	}
 	&::before {
 		top: -25px;

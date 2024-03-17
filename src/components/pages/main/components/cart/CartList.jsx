@@ -7,7 +7,7 @@ import ProductsContext from '../../../../../context/ProductsContext'
 import { NavLink } from 'react-router-dom'
 
 const CartList = ({ changeVisibility, showList }) => {
-	const { productsList, cartList, changeCartList } = useContext(ProductsContext)
+	const { productsList, cartList } = useContext(ProductsContext)
 	const [sum, setSum] = useState(0)
 	const listRef = useRef(null)
 	const listAreaRef = useRef(null)
