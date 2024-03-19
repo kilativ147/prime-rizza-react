@@ -1,7 +1,7 @@
 import s from './List.module.scss'
-import img20Min from '../../../../img/svg/20m.svg'
-import img40Min from '../../../../img/svg/40m.svg'
-import img60Min from '../../../../img/svg/60m.svg'
+import img20Min from '../../../../img/svg/delivery20.svg'
+import img40Min from '../../../../img/svg/delivery40.svg'
+import img60Min from '../../../../img/svg/delivery60.svg'
 import Item from './Item'
 
 const DeliveryList = () => {
@@ -29,7 +29,7 @@ const DeliveryList = () => {
 		},
 	]
 
-	const DeliveryItems = items.map((item, index) => <Item key={index} {...item} />)
+	const DeliveryItems = items.map((item, index) => <Item key={index} {...item}/>)
 
 	return (
 		<article className={s.article}>

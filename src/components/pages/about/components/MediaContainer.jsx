@@ -1,7 +1,7 @@
 import s from './MediaContainer.module.scss'
-import ImgFB from '../../../../img/svg/FooterFB.svg'
-import ImgInst from '../../../../img/svg/FooterInst.svg'
-import ImgGmail from '../../../../img/svg/FooterMail.svg'
+import ImgFB from '../../../../img/svg/fb.svg'
+import ImgInst from '../../../../img/svg/inst.svg'
+import ImgGmail from '../../../../img/svg/email.svg'
 import MediaItem from './MediaItem'
 
 const MediaContainer = () => {

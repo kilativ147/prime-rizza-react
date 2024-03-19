@@ -1,6 +1,6 @@
 import s from './List.module.scss'
-import imgCash from '../../../../img/svg/MoneyCash.svg'
-import imgCard from '../../../../img/svg/MoneyCard.svg'
+import imgCash from '../../../../img/svg/paymentCash.svg'
+import imgCard from '../../../../img/svg/paymentCard.svg'
 
 import Item from './Item'
 

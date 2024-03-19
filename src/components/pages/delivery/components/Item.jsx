@@ -1,14 +1,8 @@
 import s from './Item.module.scss'
 
 const DeliveryItem = ({ img, title, text, description, color, isPay }) => {
-	// Use the CSS module class if available
-	const generateDynamicClassName = (styles, className) => styles[className] || ''
-	const dynamicClassNameImg = generateDynamicClassName(s, 'item__top_payimg')
-	const dynamicClassNameTitle = generateDynamicClassName(s, 'item__text_' + color)
-
-	// convinient way
-	const imgClass = isPay ? `${s.item__top_img} ${dynamicClassNameImg}` : `${s.item__top_img}`
-	const titleClass = `${s.item__top_text} ${dynamicClassNameTitle}`
+	const imgClass = isPay ? `${s.item__top_img} ${s.item__top_payimg}` : `${s.item__top_img}`
+	const titleClass = `${s.item__top_text} ${s[`item__text_${color}`]}`
 
 	return (
 		<div className={s.item}>

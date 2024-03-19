@@ -9,8 +9,7 @@ import Galery from './components/Galery'
 
 const MainPage = () => {
 	//@ Show or not the WISHLIST
-	//!------------------
-	const [showList, setShowList] = useState(true)
+	const [showList, setShowList] = useState(false)
 	const { changeCartList } = useContext(ProductsContext)
 
 	const changeVisibility = (state = true) => {

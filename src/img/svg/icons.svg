@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 468 468" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+  <style>
+    :root>svg {
+      display: none
+    }
+
+    :root>svg:target {
+      display: block
+    }
+  </style><svg fill="none" viewBox="0 0 15 20" id="address" xmlns="http://www.w3.org/2000/svg">
+    <path d="M7.498 0C3.365 0 0 3.25 0 7.242c0 4.957 6.71 12.235 6.996 12.54.267.288.737.288 1.003 0 .288-.31 6.997-7.583 6.997-12.54C15 3.25 11.636 0 7.498 0Zm0 10.887c-2.079 0-3.773-1.637-3.773-3.645s1.694-3.644 3.773-3.644 3.773 1.636 3.773 3.644-1.69 3.645-3.773 3.645Z"
+          fill="url(#aa)" />
+    <defs>
+      <linearGradient id="aa" x1=".49" y1="0" x2="14.986" y2=".391" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#FFDB47" />
+        <stop offset="1" stop-color="#FDCC06" />
+      </linearGradient>
+    </defs>
+  </svg>
+</svg>

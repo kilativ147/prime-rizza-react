@@ -8,7 +8,7 @@ import img4 from '../../../../img/pages//main/GalleryInst4.webp'
 import img5 from '../../../../img/pages//main/GalleryInst5.webp'
 import img6 from '../../../../img/pages//main/GalleryInst6.webp'
 import imgS from '../../../../img/pages//main/Gallery-small.webp'
-import imgInst from '../../../../img/svg/InstagramWhite.svg'
+import imgInst from '../../../../img/svg/instWhite.svg'
 import { useContext } from 'react'
 import ProductsContext from '../../../../context/ProductsContext'
 

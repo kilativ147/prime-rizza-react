@@ -1,7 +1,8 @@
 import s from './Form.module.scss'
-import ArrowImg from '../../img/svg/Form ArrowRight.svg'
 import React, { useState } from 'react'
 import callbackFunc from './CallbackFunc'
+
+import ArrowImg from '../../../img/svg/arrowRight.svg'
 
 const Form = ({ setLoader }) => {
 	const [userName, setUserName] = useState('')

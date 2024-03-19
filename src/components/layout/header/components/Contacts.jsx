@@ -1,8 +1,9 @@
 import s from './Contacts.module.scss'
-import imgSchedule from '../../../img/svg/HeaderTime.svg'
-import imgTel from '../../../img/svg/HeaderPhone.svg'
 import { useContext } from 'react'
-import ProductsContext from '../../../context/ProductsContext'
+import ProductsContext from '../../../../context/ProductsContext'
+
+import imgSchedule from '../../../../img/svg/clock.svg'
+import imgTel from '../../../../img/svg/phone.svg'
 
 const Contacts = () => {
 	const {contacts} = useContext(ProductsContext)

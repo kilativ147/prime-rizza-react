@@ -32,36 +32,7 @@
 			column-gap: 0;
 		}
 	}
-	&__logo {
-		transition: all 0.2s ease;
-		@media (hover) {
-			&:hover {
-				filter: drop-shadow(0 0 5px rgb(255, 208, 0));
-			}
-		}
-	}
-	&__nav {
-		display: flex;
-		column-gap: 15px;
-		width: 100%;
-		a {
-			position: relative;
-			background: var(--main_color) left bottom / 0% 2px no-repeat;
-			transition: background 0.3s ease;
-			@media (hover) {
-				&:hover,
-				&:focus {
-					color: #fff;
-					background-size: 100% 2px;
-				}
-			}
-		}
-		@media (max-width: 800px) {
-			grid-column: 1 / 3;
-			grid-row: 2 / 3;
-			justify-content: space-evenly;
-		}
-	}
+	
 	&__media {
 		display: flex;
 		column-gap: 40px;
