@@ -1,5 +1,5 @@
 .products {
-	padding: 70px 20px;
+	padding-bottom: 70px;
 
 	&__category {
 		max-width: 770px;
@@ -8,8 +8,7 @@
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
-		column-gap: 30px;
-		row-gap: 20px;
+		gap: 15px;
 	}
 	&__category_button {
 		flex: 1 1 150px;
@@ -22,14 +21,22 @@
 		height: 100%;
 		border-radius: 50px;
 		background-color: #eceff5;
+		box-shadow: 0px 4px 10px #ccc;
 		transition: all 0.5s ease;
 		cursor: pointer;
+		// font-weight: 700;
 
-		&:hover,
 		&[aria-current='page'] {
 			background-color: #ffdb47;
 			color: #fff;
-			font-weight: 700;
+			text-shadow: 0px 0px 5px #777;
+		}
+		@media (hover) {
+			&:hover {
+				background-color: #ffdb47;
+				color: #fff;
+				text-shadow: 0px 0px 5px #777;
+			}
 		}
 	}
 	&__items {

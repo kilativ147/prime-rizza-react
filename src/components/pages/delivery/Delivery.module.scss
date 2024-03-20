@@ -1,0 +1,13 @@
+.delivery {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	&__container {
+		position: relative;
+	}
+	&__content {
+		color: #262626;
+		padding: 70px 20px;
+	}
+}

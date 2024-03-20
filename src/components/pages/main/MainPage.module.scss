@@ -1,0 +1,14 @@
+.index {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.index section {
+	flex: 1 1 auto;
+}
+
+.main__container {
+	// padding: 0px 10px;
+	position: relative;
+}

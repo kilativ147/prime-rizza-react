@@ -1,18 +1,23 @@
 import s from './Galery.module.scss'
-import img1 from '../../../../img/pages//main/GalleryInst1.png'
-import img2 from '../../../../img/pages//main/GalleryInst2.png'
-import img3 from '../../../../img/pages//main/GalleryInst3.png'
-import img4 from '../../../../img/pages//main/GalleryInst4.png'
-import img5 from '../../../../img/pages//main/GalleryInst5.png'
-import img6 from '../../../../img/pages//main/GalleryInst6.png'
-import imgInst from '../../../../img/svg/InstagramWhite.svg'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
+import img1 from '../../../../img/pages//main/GalleryInst1.webp'
+import img2 from '../../../../img/pages//main/GalleryInst2.webp'
+import img3 from '../../../../img/pages//main/GalleryInst3.webp'
+import img4 from '../../../../img/pages//main/GalleryInst4.webp'
+import img5 from '../../../../img/pages//main/GalleryInst5.webp'
+import img6 from '../../../../img/pages//main/GalleryInst6.webp'
+import imgS from '../../../../img/pages//main/Gallery-small.webp'
+import { useContext } from 'react'
+import ProductsContext from '../../../../context/ProductsContext'
 
 const Galery = () => {
+	const { contacts } = useContext(ProductsContext)
 	const items = [img1, img2, img3, img4, img5, img6, img1, img2, img3, img4, img5, img6]
 
 	const imgList = items.map((item, index) => (
 		<div key={index} className={s.gallery__back_img}>
-			<img src={item} alt='' />
+			<LazyLoadImage src={item} placeholderSrc={imgS} effect='blur' alt={'Hero image'} />
 		</div>
 	))
 
@@ -22,11 +27,9 @@ const Galery = () => {
 				<div className={s.gallery__back}>
 					<div className={s.gallery__back_flex}>{imgList}</div>
 				</div>
-				<div className={s.label}>
-					<a href='http://instagram.com'>
-						<img src={imgInst} alt='' />@primepizza.if
-					</a>
-				</div>
+				<a href={contacts.inst} target='_blank' className={s.label}>
+					@primepizza
+				</a>
 			</div>
 		</article>
 	)

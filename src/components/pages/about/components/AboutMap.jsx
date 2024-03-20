@@ -1,40 +1,41 @@
-import s from './AboutMap.module.css'
+import s from './AboutMap.module.scss'
+import 'react-lazy-load-image-component/src/effects/blur.css'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+
+import { useContext } from 'react'
+import ProductsContext from '../../../../context/ProductsContext'
 
 const AboutMap = () => {
+	const { contacts } = useContext(ProductsContext)
+	const numberView = `+38 (${contacts.phone.slice(0, 3)}) ${contacts.phone.slice(
+		3,
+		6,
+	)}-${contacts.phone.slice(6, 8)}-${contacts.phone.slice(8)}`
+
 	return (
-		<section className='about__map map animation-bottom'>
-			<div className='map__container'>
-				<div className='map__content'>
-					<div className='map__logo'>
-						<img src='img/icons/Logo.png' alt='Logo' />
-					</div>
-					<address className='map__contacts-flex'>
-						<div className='map__contacts-item'>
-							<div>
-								<img src='img/icons/footer_address.svg' alt='address' />
-							</div>
-							<p>вул. Європейська площа 3</p>
-						</div>
-						<div className='map__contacts-item'>
-							<div>
-								<img src='img/icons/footer_mail.svg' alt='mail' />
-							</div>
-							<a href='mailto:primepizza@gmail.com'>primepizza@gmail.com</a>
-						</div>
-						<div className='map__contacts-item'>
-							<div>
-								<img src='img/icons/footer_phone.svg' alt='phone' />
-							</div>
-							<a href='tel:+380952081079'>+38 (095) 208 10 79</a>
-						</div>
-						<div className='map__contacts-item'>
-							<div>
-								<img src='img/icons/header_time.svg' alt='time' />
-							</div>
-							<p>Кожного дня 10:00 - 22:00</p>
-						</div>
-					</address>
-				</div>
+		<section className={s.map}>
+			<a href={contacts.map} target='_blank'>
+				<LazyLoadImage
+					src='/img/about/Map.webp'
+					placeholderSrc='/img/about/Map-small.webp'
+					effect='blur'
+					alt={'Map'}
+				/>
+			</a>
+			<div className={s.map__content}>
+				<div className={s.map__logo}></div>
+				<address className={s.map__contacts_flex}>
+					<a className={`${s.map__contact} ${s.map__contact_address}`} href={contacts.map} target='_blank'>
+						{contacts.address}
+					</a>
+					<a className={`${s.map__contact} ${s.map__contact_email}`} href={`emailto:${contacts.email}`}>
+						{contacts.email}
+					</a>
+					<a className={`${s.map__contact} ${s.map__contact_phone}`} href={`tel:+38${contacts.phone}`}>
+						{numberView}
+					</a>
+					<p className={`${s.map__contact} ${s.map__contact_clock}`}>{contacts.time}</p>
+				</address>
 			</div>
 		</section>
 	)

@@ -1,31 +1,24 @@
-import s from './MediaContainer.module.css'
-
-import ImgFB from '../../../../img/svg/FooterFB.svg'
-import ImgInst from '../../../../img/svg/FooterInst.svg'
-import ImgGmail from '../../../../img/svg/FooterMail.svg'
+import s from './MediaContainer.module.scss'
 import MediaItem from './MediaItem'
 
 const MediaContainer = () => {
 	const items = [
 		{
 			title: 'Facebook',
-			img: ImgFB,
 			link: 'http://facebook.com',
 			subtitle:
-				'Ми в Facebook, підписуйтесь і слідкуйте за новинками. Також щотиждня в Prime проходять цікаві розіграші',
+				'Ми в Facebook! Підписуйтесь і слідкуйте за новинками. Щотиждня в Prime проходять цікаві розіграші',
 		},
 		{
 			title: 'Instagram',
-			img: ImgInst,
 			link: 'http://instagram.com',
 			subtitle:
-				'Слідкуйте за сторінкою в інстаграмі і получайте не тільки смакове але і візуальне задоволення',
+				'Слідкуйте за нами в інстаграмі! Отримуйте не тільки смакове але і візуальне задоволення',
 		},
 		{
-			title: 'Gmail',
-			img: ImgGmail,
+			title: 'Email',
 			link: 'mailto:kilativ147@gmail.com',
-			subtitle: 'Пишіть нам на емейл , побажання стосовно роботи , та партнерства',
+			subtitle: 'Маєте побажання, пропозицію, скаргу? Напишіть нам на електронну пошту.',
 		},
 	]
 

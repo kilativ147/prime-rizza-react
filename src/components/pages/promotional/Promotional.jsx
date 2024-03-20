@@ -1,52 +1,38 @@
-// import s from './Promotional.module.css'
-import { useEffect } from 'react'
+import s from './Promotional.module.scss'
+import 'react-lazy-load-image-component/src/effects/blur.css'
+import { useContext, useEffect } from 'react'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import PromotionalItem from './PromotionalItem'
-import img1Plus1 from '../../../img/pages/promotional/Offer1+1.png'
-import imgMinus15 from '../../../img/pages/promotional/Offer-15.png'
-import imgCoffee from '../../../img/pages/promotional/OfferCoffee.png'
-import imgCola from '../../../img/pages/promotional/OfferCola.png'
+import ProductsContext from '../../../context/ProductsContext'
 
 const Promotional = () => {
+	const { promotionals } = useContext(ProductsContext)
 	useEffect(() => {
 		document.title = 'Prime Pizza ⋅ Акції'
 	}, [])
-	const items = [
-		{
-			img: img1Plus1,
-			title: '1 + 1 = 3',
-			text: 'Акційна пропозиція! Замов 2 будь-які піци та отримай третю у подарунок!',
-			textWarning: 'Увага, акції не сумуються!',
-		},
-		{
-			img: imgCola,
-			title: '1 + 1 = Кола(0,5л.)',
-			text: 'Акційна пропозиція! Замов 2 будь-які піци та отримай колу 0,5 л. подарунок!',
-			textWarning: 'Увага, акції не сумуються!',
-		},
-		{
-			img: imgMinus15,
-			title: '-15% на самовиніс',
-			text: 'Акційна пропозиція! Отримай знижку 15% на усе замовлениия якщо забереш його самостійно!',
-			textWarning: 'Увага, акції не сумуються!',
-		},
-		{
-			img: imgCoffee,
-			title: '-20% на ранкову каву',
-			text: 'Акційна пропозиція! Отримай знижку 20% на ранкову каву!',
-			textWarning: 'Увага, акції не сумуються!',
-		},
-	]
 
-	const PromotionalList = items.map((item, index) => <PromotionalItem key={index} {...item} />)
+	const PromotionalList = promotionals.map((item, index) => (
+		<PromotionalItem key={index} {...item} />
+	))
 
 	return (
-		<section
-			className='promotional__container'
-			style={{
-				padding: '70px 20px',
-			}}
-		>
-			{PromotionalList}
+		<section className={s.promotional}>
+			<div className={s.promotional__container}>
+				<div className={s.promotional__hero}>
+					<div className={s.promotional__hero_img}>
+						<LazyLoadImage
+							src='/img/promotional/Hero.webp'
+							placeholderSrc='/img/promotional/Hero-small.webp'
+							effect='blur'
+							alt={'Hero section'}
+						/>
+					</div>
+					<h2>
+						Ніщо так не доповнює смачну піцу, як <span>АКЦІЇ</span>
+					</h2>
+				</div>
+				{PromotionalList}
+			</div>
 		</section>
 	)
 }

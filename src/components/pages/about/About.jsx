@@ -1,34 +1,29 @@
+import s from './About.module.scss'
+import 'react-lazy-load-image-component/src/effects/blur.css'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { useEffect } from 'react'
-import s from './About.module.css'
-import GreatingsImage from '../../../img/pages/about/Background.png'
 import MediaContainer from './components/MediaContainer'
 import AboutContent from './components/AboutContent'
-import Form from '../../form/Form'
 
 const About = () => {
 	useEffect(() => {
 		document.title = 'Prime Pizza ⋅ Про нас'
 	}, [])
 	return (
-		<div
-			style={{
-				height: '100%',
-				display: 'flex',
-				flexDirection: 'column',
-				justifyContent: 'space-between',
-			}}
-		>
-			<section className={s.about}>
-				<article className={s.about__greatings}>
-					<div className={s.about__backimage}>
-						<img src={GreatingsImage} alt='Prime Pizza Image' />
-					</div>
-					<MediaContainer />
-				</article>
-				<AboutContent />
-			</section>
-			<Form />
-		</div>
+		<section className={s.about}>
+			<article className={s.about__hero}>
+				<div className={s.about__hero_background}>
+					<LazyLoadImage
+						src='/img/about/Hero.webp'
+						placeholderSrc='/img/about/Hero-small.webp'
+						effect='blur'
+						alt={'Hero image'}
+					/>
+				</div>
+				<MediaContainer />
+			</article>
+			<AboutContent />
+		</section>
 	)
 }
 

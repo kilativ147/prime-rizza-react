@@ -122,14 +122,16 @@
 	}
 
 	&__post {
+		display: block;
 		width: 100%;
 		padding: 15px;
-		background: var(--color);
 		font-weight: 700;
 		font-size: 18px;
+		text-align: center;
 		line-height: 100%;
 		color: #fff;
-		text-shadow: 1px 1px 5px #999;
 		border-radius: 50px;
+		background: var(--main_color);
+		text-shadow: 1px 1px 5px #999;
 	}
 }

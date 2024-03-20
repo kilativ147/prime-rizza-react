@@ -1,5 +1,6 @@
 $borderRadius: 12px;
 $itemBorder: rgba(170, 180, 147, 0.29);
+
 .item {
 	display: flex;
 	flex-direction: column;
@@ -8,51 +9,67 @@ $itemBorder: rgba(170, 180, 147, 0.29);
 	width: 100%;
 	max-width: 400px;
 	height: 100%;
-
+	box-shadow: 0 0 5px 1px #ccc;
 	border-radius: $borderRadius;
-
-	border: 2px solid $itemBorder;
 	background: #fff;
 	transition: all 0.3s ease;
+	translate: 0 150px;
+	opacity: 0;
+	scale: 0;
+	animation: showUp 0.5s ease forwards;
+	
+	@keyframes showUp {
+		0% {
+		}
+		100% {
+			translate: 0;
+			scale: 1;
+			opacity: 1;
+		}
+	}
+	@media (hover) {
+		&:hover {
+			box-shadow: 0px 0px 20px 1px #999;
+			&::after {
+				box-shadow: 0px 8px 10px 0px #ccc;
+			}
+		}
+		&:hover &__image img {
+			transform: scale(1.15);
+		}
+	}
 
-	&::before,
 	&::after {
 		content: '';
 		position: absolute;
-		bottom: 0;
+		bottom: 1px;
 		left: 50%;
+		translate: -50% 100%;
 		width: 60px;
-	}
-	&::before {
-		aspect-ratio: 1;
-		translate: -50% 50%;
-		background-color: #fff;
-		border: 2px solid $itemBorder;
-		border-radius: 50%;
-	}
-	&::after {
 		aspect-ratio: 2;
-		translate: -50% 0%;
+		border-radius: 0 0 50px 50px;
 		background-color: #fff;
+		box-shadow: 0 5px 10px 0px #ddd;
 	}
 
-	&:hover {
-	}
 	&__image {
 		width: 100%;
 		height: 262px;
 		margin-bottom: 20px;
 		border-radius: $borderRadius $borderRadius 0 0;
 		overflow: hidden;
-
-		img {
+		span {
 			width: 100%;
 			height: 100%;
-			object-fit: cover;
-			transition: all 0.3s ease;
+			background-position: center !important;
+			background-size: 80% !important;
+			background-repeat: no-repeat;
 
-			&:hover {
-				transform: scale(1.25);
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				transition: all 0.3s ease !important;
 			}
 		}
 	}
@@ -60,8 +77,9 @@ $itemBorder: rgba(170, 180, 147, 0.29);
 	h3 {
 		padding: 0 20px;
 		font-size: 24px;
-		font-weight: 600;
+		font-weight: 700;
 		line-height: 150%;
+		text-align: center;
 	}
 
 	p {
@@ -69,6 +87,8 @@ $itemBorder: rgba(170, 180, 147, 0.29);
 		font-size: 16px;
 		font-weight: 300;
 		line-height: 150%;
+		text-align: center;
+		text-wrap: pretty;
 	}
 	&__price {
 		flex: 1 1 auto;
@@ -86,23 +106,29 @@ $itemBorder: rgba(170, 180, 147, 0.29);
 	}
 	&__buy {
 		position: absolute;
-		z-index: 1;
+		z-index: 10;
 		bottom: -0px;
 		left: 50%;
 		translate: -50% 50%;
-
 		width: 40px;
 		aspect-ratio: 1;
 		border-radius: 50%;
-		background: #fff url('../../../../img/svg/ProductAdd.svg') calc(50% + 1px) calc(50% - 2px)
-		no-repeat;
-		transition: all 0.3s ease;
-		
-		&:hover {
+		background: #fff url('../../../../img/svg/icons.svg#productAdd') center / 60% no-repeat;
+		transition: all 0.1s ease;
+
+		@media (hover) {
+			&:hover {
+				width: 50px;
+				box-shadow: 0px 0px 20px rgba(255, 219, 71, 0.5), indet 0 0 0 1px #fff;
+				background: #fdcc06 url('../../../../img/svg/icons.svg#productHover') center / contain no-repeat;
+				background-size: 50%;
+			}
+		}
+		&:active {
 			width: 50px;
-			box-shadow: 0px 0px 20px rgba(255, 219, 71, 0.5);
-			background: #fdcc06 url('../../../../img/svg/ProductAddHover.svg') calc(50% + 1px)
-				calc(50% - 2px) no-repeat;
+			box-shadow: 0px 0px 20px rgba(255, 219, 71, 0.5), indet 0 0 0 1px #fff;
+			background: #fdcc06 url('../../../../img/svg/icons.svg#productHover') center / contain no-repeat;
+			background-size: 75%;
 		}
 	}
 }

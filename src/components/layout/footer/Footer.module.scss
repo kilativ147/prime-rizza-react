@@ -1,0 +1,121 @@
+$svg-size: 35px;
+.footer {
+	background-color: #262626;
+	width: 100%;
+	padding: 60px 20px;
+
+	p,
+	a,
+	span {
+		color: #bbb;
+	}
+	&__container {
+		max-width: 100%;
+	}
+	&__top {
+		display: grid;
+		grid-template-columns: auto 1fr auto;
+		align-items: center;
+		column-gap: 50px;
+		row-gap: 20px;
+		padding-bottom: 35px;
+
+		@media (max-width: 800px) {
+			grid-template-columns: 1fr 1fr;
+			justify-items: center;
+		}
+		@media (max-width: 400px) {
+			grid-template-columns: 1fr;
+			column-gap: 0;
+		}
+	}
+
+	&__media {
+		display: flex;
+		column-gap: 40px;
+		& > a {
+			transition: all 0.3s ease;
+			&::before {
+				content: '';
+				display: block;
+				height: $svg-size;
+				aspect-ratio: 1;
+			}
+			@media (hover) {
+				&:hover {
+					filter: drop-shadow(0 0 5px rgb(255, 208, 0));
+				}
+			}
+		}
+		&_inst {
+			&::before {
+				background: url('../../../img/svg/icons.svg#inst') left center / 100% no-repeat;
+			}
+		}
+		&_fb {
+			&::before {
+				background: url('../../../img/svg/icons.svg#facebook') left center / 100% no-repeat;
+			}
+		}
+		@media (max-width: 400px) {
+			grid-row: 3 / 4;
+		}
+	}
+
+	&__bottom {
+		display: grid;
+		align-items: center;
+		grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+		row-gap: 25px;
+
+		@media (max-width: 700px) {
+			grid-template-columns: 1fr;
+		}
+	}
+	&__rights {
+		@media (max-width: 700px) {
+			order: 2;
+			text-align: center;
+		}
+	}
+	&__contacts {
+		display: flex;
+		justify-content: space-between;
+		row-gap: 20px;
+		flex-wrap: wrap;
+		justify-content: center;
+		a {
+			flex: 1 1 250px;
+			padding: 5px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-wrap: pretty;
+			transition: all 0.3s ease;
+			&::before {
+				content: '';
+				margin-right: 5px;
+				display: inline-block;
+				height: 1lh;
+				aspect-ratio: 1;
+			}
+			
+			@media (hover) {
+				&:hover,
+				&:focus {
+					color: #fff;
+					text-decoration: underline;
+				}
+			}
+		}
+		&_address::before {
+			background: url('../../../img/svg/icons.svg#address') center / 100% no-repeat;
+		}
+		&_email::before {
+			background: url('../../../img/svg/icons.svg#email') center / 100% no-repeat;
+		}
+		&_phone::before {
+			background: url('../../../img/svg/icons.svg#phone') center / 100% no-repeat;
+		}
+	}
+}

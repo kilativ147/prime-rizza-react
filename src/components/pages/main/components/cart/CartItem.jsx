@@ -1,11 +1,13 @@
-import { useContext, useEffect } from 'react'
 import s from './CartItem.module.scss'
+import { useContext } from 'react'
+import ProductsContext from '../../../../../context/ProductsContext'
+
 import { CiSquarePlus, CiSquareMinus } from 'react-icons/ci'
 import { RxCross2 } from 'react-icons/rx'
-import ProductsContext from '../../../../../context/ProductsContext'
 
 const CartItem = ({ id, img, title, count, price }) => {
 	const { cartList, changeCartList } = useContext(ProductsContext)
+	img = `/img/products/compressed/${img}`
 
 	const onPlusHandle = () => {
 		let oldList = { ...cartList }

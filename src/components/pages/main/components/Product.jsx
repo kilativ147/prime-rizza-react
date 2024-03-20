@@ -1,4 +1,6 @@
 import s from './Product.module.scss'
+import 'react-lazy-load-image-component/src/effects/blur.css'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { useContext } from 'react'
 import ProductsContext from '../../../../context/ProductsContext'
 
@@ -14,10 +16,17 @@ const Product = ({ id, title, image: img, description, price }) => {
 		}
 		changeCartList(oldList)
 	}
+	img = `/img/products/${img}`
+
 	return (
-		<div className={s.item}>
+		<li className={s.item}>
 			<div className={s.item__image}>
-				<img src={img} alt={title} />
+				<LazyLoadImage
+					src={img}
+					placeholderSrc='/img/mainPage/HeroPizza-small.webp'
+					effect='blur'
+					alt={title}
+				/>
 			</div>
 			<h3>{title}</h3>
 			<p>{description}</p>
@@ -25,7 +34,7 @@ const Product = ({ id, title, image: img, description, price }) => {
 				<span>{price} грн.</span>
 			</p>
 			<button type='button' className={s.item__buy} onClick={handleClick}></button>
-		</div>
+		</li>
 	)
 }
 

@@ -1,0 +1,13 @@
+.about__container {
+	position: relative;
+}
+.about__content_flex {
+	display: flex;
+	gap: 70px;
+	flex-direction: column;
+	padding-bottom: 90px;
+	
+	@media (max-width: 900px) {
+		row-gap: 75px;
+	}
+}

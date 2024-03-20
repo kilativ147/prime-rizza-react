@@ -1,0 +1,34 @@
+.about {
+	position: relative;
+	height: 100%;
+	&__hero {
+		width: 100%;
+		height: clamp(300px, 40vh, 600px);
+		position: relative;
+		margin-bottom: clamp(50px, 22vw, 250px);
+		span{
+			width: 100%;
+			height: 100%;
+			background-position: center !important;
+			background-size: cover !important;
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&__hero_background {
+		position: absolute;
+		top: 0px;
+		left: 0;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}

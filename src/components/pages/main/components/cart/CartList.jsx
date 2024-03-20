@@ -3,9 +3,11 @@ import CartItem from './CartItem'
 import { RxCross2 } from 'react-icons/rx'
 import { useContext, useEffect, useState, useRef } from 'react'
 import ProductsContext from '../../../../../context/ProductsContext'
+// import orderFunc from './orderFunc'
+import { NavLink } from 'react-router-dom'
 
 const CartList = ({ changeVisibility, showList }) => {
-	const { productsList, cartList, changeCartList } = useContext(ProductsContext)
+	const { productsList, cartList } = useContext(ProductsContext)
 	const [sum, setSum] = useState(0)
 	const listRef = useRef(null)
 	const listAreaRef = useRef(null)
@@ -69,13 +71,19 @@ const CartList = ({ changeVisibility, showList }) => {
 				<button type='button' className={s.basket__close} onClick={() => changeVisibility(false)}>
 					<RxCross2 />
 				</button>
-				<form action='' className={s.basket__form}>
+				{/* <form action='#' className={s.basket__form} onSubmit={handleSubmit}> */}
+				<form action='#' className={s.basket__form} >
 					<p className={s.basket__title}>Ваше замовлення</p>
 					<ul className={s.basket__list}>{cartItems}</ul>
 					<div className={s.basket__summ}>
 						сума: <span>{sum}</span> грн.
 					</div>
-					<button className={s.basket__post}>Підтвердити замовлення</button>
+					{/* <button className={s.basket__post} type='submit' value='Send'>
+						Підтвердити замовлення
+					</button> */}
+					<NavLink to='/order' className={s.basket__post}>
+						Підтвердити замовлення
+					</NavLink>
 				</form>
 			</div>
 		</aside>

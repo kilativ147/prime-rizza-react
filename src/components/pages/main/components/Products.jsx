@@ -1,7 +1,5 @@
 import s from './Products.module.scss'
-
 import { Outlet, NavLink } from 'react-router-dom'
-// import {  } from 'react-router-dom'
 
 const Products = () => {
 
@@ -23,9 +21,9 @@ const Products = () => {
 				</NavLink>
 			</div>
 
-			<div className={s.products__items}>
+			<ul className={s.products__items}>
 				<Outlet  />
-			</div>
+			</ul>
 		</article>
 	)
 }

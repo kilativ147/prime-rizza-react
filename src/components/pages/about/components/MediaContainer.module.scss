@@ -1,0 +1,12 @@
+.about__media {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	translate: -50% 50%;
+	z-index: 1;
+	width: 100%;
+	padding-inline: 40px;
+	display: flex;
+	justify-content: center;
+	gap: clamp(10px, 5vw, 35px);
+}

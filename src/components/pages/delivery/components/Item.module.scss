@@ -1,0 +1,98 @@
+.item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	cursor: default;
+
+	&__top {
+		position: relative;
+		margin-bottom: 20px;
+		height: 120px;
+		display: flex;
+		align-items: center;
+		transition: all 0.3s ease;
+
+		&_back {
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: -1;
+			background-color: #eceff56b;
+			// background-color: #000;
+			background-size: 0;
+			animation: sizeUp 3s linear infinite;
+
+			@keyframes sizeUp {
+				50% {
+					width: 150px;
+					height: 150px;
+					$col: #00000018;
+					// box-shadow: 0 0 100px $col, inset 0 0 100px $col ;
+				}
+			}
+		}
+		&_img {
+			width: 100px;
+			height: 100px;
+			&_20 {
+				background: url('../../../../img/svg/icons.svg#delivery20') center / contain no-repeat;
+			}
+			&_40 {
+				background: url('../../../../img/svg/icons.svg#delivery40') center / contain no-repeat;
+			}
+			&_60 {
+				background: url('../../../../img/svg/icons.svg#delivery60') center / contain no-repeat;
+			}
+			&_card {
+				background: url('../../../../img/svg/icons.svg#deliveryCard') center / contain no-repeat;
+			}
+			&_cash {
+				background: url('../../../../img/svg/icons.svg#deliveryCash') center / contain no-repeat;
+			}
+		}
+		&_text {
+			margin-left: 5px;
+			align-self: end;
+			font-weight: 700;
+			font-size: 42px;
+			line-height: 135.714286%; /* 57/42 */
+			text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+
+			color: transparent;
+			background-clip: text;
+			-webkit-background-clip: text;
+		}
+		.green {
+			background-image: linear-gradient(92.06deg, #2ec674 3.15%, #9de73e 96.53%);
+		}
+		.yellow {
+			background-image: linear-gradient(45deg, rgb(219, 195, 10) 0%, rgba(227, 231, 62, 1) 100%);
+		}
+		.red {
+			background-image: linear-gradient(92.06deg, #ff7347 3.15%, #fd9a06 96.53%);
+		}
+	}
+	&__text {
+		display: block;
+		font-size: 24px;
+		margin-bottom: 15px;
+		font-weight: 700;
+		text-align: center;
+	}
+	&__description {
+		font-size: 20px;
+		line-height: 150%; /* 36/24 */
+		text-align: center;
+	}
+	@media (hover) {
+		&:hover {
+			.item__top {
+				scale: 1.2;
+			}
+		}
+	}
+}
