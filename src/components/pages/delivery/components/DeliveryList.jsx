@@ -1,28 +1,22 @@
 import s from './List.module.scss'
-import img20Min from '../../../../img/svg/delivery20.svg'
-import img40Min from '../../../../img/svg/delivery40.svg'
-import img60Min from '../../../../img/svg/delivery60.svg'
 import Item from './Item'
 
 const DeliveryList = () => {
 	const items = [
 		{
-			img: img20Min,
-			title: '20хв',
+			title: '20',
 			text: 'У "зелену зону" - від 20 хвилин',
 			description: 'Безкоштовна доставка від 3 піц',
 			color: 'green',
 		},
 		{
-			img: img40Min,
-			title: '40хв',
+			title: '40',
 			text: 'У "жовту зону" - від 40 хвилин',
 			description: 'Безкоштовна доставка від 4 піц',
 			color: 'yellow',
 		},
 		{
-			img: img60Min,
-			title: 'red',
+			title: '60',
 			text: 'У "червону зону" - від 60 хвилин',
 			description: 'Безкоштовна доставка від 5 піц',
 			color: 'red',

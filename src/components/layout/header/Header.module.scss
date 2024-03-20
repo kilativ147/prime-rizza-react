@@ -23,24 +23,22 @@
 			width: 100vw;
 			height: 100%;
 			background: #262626;
-			// filter: blur(5px);
 		}
 	}
 	&__content {
 		padding: 0 20px;
 		display: grid;
-		grid-template-columns: 33.3% 250px 33.3%;
+		grid-template-columns: 1fr 250px 1fr;
 		justify-content: center;
 		place-items: center;
 		height: 100%;
+		max-width: 1300px;
+		margin: 0 auto;
 	}
 
 	@media (max-width: 800px) {
 		@media (max-height: 700px) {
 			height: var(--header_mob);
-			&__container::before {
-				// background: #0000008f;
-			}
 		}
 		&__content {
 			position: fixed;

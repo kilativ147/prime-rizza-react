@@ -21,9 +21,9 @@ const Products = () => {
 				</NavLink>
 			</div>
 
-			<div className={s.products__items}>
+			<ul className={s.products__items}>
 				<Outlet  />
-			</div>
+			</ul>
 		</article>
 	)
 }

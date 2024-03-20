@@ -6,49 +6,31 @@ import ProductsContext from '../../../context/ProductsContext'
 import Logo from '../logo/Logo'
 import NavBar from '../navbar/NavBar'
 
-import imgInst from '../../../img/svg/inst.svg'
-import imgFb from '../../../img/svg/fb.svg'
-import imgAddress from '../../../img/svg/address.svg'
-import imgMail from '../../../img/svg/email.svg'
-import imgTel from '../../../img/svg/phone.svg'
-
 const Footer = () => {
 	const { contacts } = useContext(ProductsContext)
 	return (
 		<footer className={s.footer}>
 			<div className={s.footer__container}>
 				<div className={s.footer__top}>
-					<Logo classComponent='footer'/>
-					<NavBar classComponent='footer'/>
+					<Logo classComponent='footer' />
+					<NavBar classComponent='footer' />
 					<div className={s.footer__media}>
-						<a href={contacts.inst} target='_blank'>
-							<img src={imgInst} alt='Instagram' />
-						</a>
-						<a href={contacts.fb} target='_blank'>
-							<img src={imgFb} alt='Facebook' />
-						</a>
+						<a href={contacts.inst} target='_blank' className={s.footer__media_inst}></a>
+						<a href={contacts.fb} target='_blank' className={s.footer__media_fb}></a>
 					</div>
 				</div>
 				<div className={s.footer__bottom}>
 					<p className={s.footer__rights}>© 2023 Всі права захищені</p>
-					<address className={s.footer__address}>
-						<a href={contacts.map} target='_blank'>
-							<img src={imgAddress} alt='street' />
-							<span>{contacts.address}</span>
+					<address className={s.footer__contacts}>
+						<a href={contacts.map} target='_blank' className={s.footer__contacts_address}>
+							{contacts.address}
 						</a>
-						<a href={`emailto:${contacts.email}`}>
-							<img src={imgMail} alt='mail' />
-							<span>{contacts.email}</span>
+						<a href={`emailto:${contacts.email}`} className={s.footer__contacts_email}>
+							{contacts.email}
 						</a>
-
-						<a href={`tel:+38${contacts.phone}`}>
-							<img src={imgTel} alt='' />
-							<span>
-								{`+38 (${contacts.phone.slice(0, 3)}) ${contacts.phone.slice(
-									3,
-									6,
-								)}-${contacts.phone.slice(6, 8)}-${contacts.phone.slice(8)}`}
-							</span>
+						<a href={`tel:+38${contacts.phone}`} className={s.footer__contacts_phone}>
+							{`+38 (${contacts.phone.slice(0, 3)})
+							${contacts.phone.slice(3, 6)}-${contacts.phone.slice(6, 8)}-${contacts.phone.slice(8)}`}
 						</a>
 					</address>
 				</div>

@@ -1,8 +1,6 @@
 import s from './Form.module.scss'
 import React, { useState } from 'react'
-import callbackFunc from './CallbackFunc'
-
-import ArrowImg from '../../../img/svg/arrowRight.svg'
+import formFunc from '../../../functions/FormFunc'
 
 const Form = ({ setLoader }) => {
 	const [userName, setUserName] = useState('')
@@ -12,14 +10,7 @@ const Form = ({ setLoader }) => {
 	const handleSubmit = async (e) => {
 		e.preventDefault()
 		setLoader(true)
-		const send = callbackFunc(
-			userName,
-			setUserName,
-			userPhone,
-			setUserPhone,
-			userEmail,
-			setUserEmail,
-		)
+		const send = formFunc(userName, setUserName, userPhone, setUserPhone, userEmail, setUserEmail)
 		if (send !== false) {
 			setUserName('')
 			setUserPhone('')
@@ -70,11 +61,8 @@ const Form = ({ setLoader }) => {
 						placeholder='E-mail'
 						required
 					/>
-					<button className={s.form__submit} type='submit' value='Send'>
-						<span>Чекаю дзвінка!</span>
-						<div>
-							<img src={ArrowImg} alt='' />
-						</div>
+					<button className={s.form__button} type='submit' value='Send'>
+						Чекаю дзвінка!
 					</button>
 				</div>
 			</form>

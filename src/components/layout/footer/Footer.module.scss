@@ -1,3 +1,4 @@
+$svg-size: 35px;
 .footer {
 	background-color: #262626;
 	width: 100%;
@@ -18,10 +19,6 @@
 		column-gap: 50px;
 		row-gap: 20px;
 		padding-bottom: 35px;
-		a {
-			img {
-			}
-		}
 
 		@media (max-width: 800px) {
 			grid-template-columns: 1fr 1fr;
@@ -32,18 +29,32 @@
 			column-gap: 0;
 		}
 	}
-	
+
 	&__media {
 		display: flex;
 		column-gap: 40px;
-		a {
+		& > a {
 			transition: all 0.3s ease;
+			&::before {
+				content: '';
+				display: block;
+				height: $svg-size;
+				aspect-ratio: 1;
+			}
 			@media (hover) {
 				&:hover {
 					filter: drop-shadow(0 0 5px rgb(255, 208, 0));
 				}
 			}
-			img {
+		}
+		&_inst {
+			&::before {
+				background: url('../../../img/svg/icons.svg#inst') left center / 100% no-repeat;
+			}
+		}
+		&_fb {
+			&::before {
+				background: url('../../../img/svg/icons.svg#facebook') left center / 100% no-repeat;
 			}
 		}
 		@media (max-width: 400px) {
@@ -67,27 +78,44 @@
 			text-align: center;
 		}
 	}
-	&__address {
+	&__contacts {
 		display: flex;
-		column-gap: 35px;
+		justify-content: space-between;
+		row-gap: 20px;
 		flex-wrap: wrap;
 		justify-content: center;
 		a {
-			img {
+			flex: 1 1 250px;
+			padding: 5px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-wrap: pretty;
+			transition: all 0.3s ease;
+			&::before {
+				content: '';
+				margin-right: 5px;
+				display: inline-block;
+				height: 1lh;
+				aspect-ratio: 1;
 			}
-			span {
-				margin-left: 5px;
-				transition: all 0.3s ease;
-			}
+			
 			@media (hover) {
 				&:hover,
 				&:focus {
-					span {
-						color: #fff;
-						text-decoration: underline;
-					}
+					color: #fff;
+					text-decoration: underline;
 				}
 			}
+		}
+		&_address::before {
+			background: url('../../../img/svg/icons.svg#address') center / 100% no-repeat;
+		}
+		&_email::before {
+			background: url('../../../img/svg/icons.svg#email') center / 100% no-repeat;
+		}
+		&_phone::before {
+			background: url('../../../img/svg/icons.svg#phone') center / 100% no-repeat;
 		}
 	}
 }

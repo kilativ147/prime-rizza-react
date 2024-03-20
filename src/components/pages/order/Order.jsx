@@ -3,7 +3,7 @@ import s from './Order.module.scss'
 import { FaLongArrowAltLeft } from 'react-icons/fa'
 import ProductsContext from '../../../context/ProductsContext'
 import TableItem from './TableItem'
-import orderFunc from './orderFunc'
+import orderFunc from '../../../functions/orderFunc'
 import { NavLink, useNavigate } from 'react-router-dom'
 
 const Order = ({ setLoader }) => {

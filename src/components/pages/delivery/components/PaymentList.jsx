@@ -1,19 +1,17 @@
 import s from './List.module.scss'
-import imgCash from '../../../../img/svg/paymentCash.svg'
-import imgCard from '../../../../img/svg/paymentCard.svg'
-
 import Item from './Item'
 
 const PaymentList = () => {
 	const items = [
 		{
-			img: imgCash,
-			text: 'Готівка',
+			title: 'Cash',
+			text: 'Готівкою',
 			description: 'вкажіть розрахунок без решти',
+			color: 'yellow',
 		},
 		{
-			img: imgCard,
-			text: 'Карта',
+			title: 'Card',
+			text: 'Картою',
 			description: "Розрахунки картою проводяться через термінал який кур'єр буде мати з собою",
 			color: 'yellow',
 		},

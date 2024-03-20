@@ -19,7 +19,7 @@ const Product = ({ id, title, image: img, description, price }) => {
 	img = `/img/products/${img}`
 
 	return (
-		<div className={s.item}>
+		<li className={s.item}>
 			<div className={s.item__image}>
 				<LazyLoadImage
 					src={img}
@@ -34,7 +34,7 @@ const Product = ({ id, title, image: img, description, price }) => {
 				<span>{price} грн.</span>
 			</p>
 			<button type='button' className={s.item__buy} onClick={handleClick}></button>
-		</div>
+		</li>
 	)
 }
 

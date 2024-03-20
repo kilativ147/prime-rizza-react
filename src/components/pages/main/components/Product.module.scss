@@ -106,33 +106,29 @@ $itemBorder: rgba(170, 180, 147, 0.29);
 	}
 	&__buy {
 		position: absolute;
-		z-index: 1;
+		z-index: 10;
 		bottom: -0px;
 		left: 50%;
 		translate: -50% 50%;
-
 		width: 40px;
 		aspect-ratio: 1;
 		border-radius: 50%;
-		background: #fff url('../../../../img/svg/ProductAdd.svg') calc(50% + 1px) calc(50% - 2px)
-			no-repeat;
+		background: #fff url('../../../../img/svg/icons.svg#productAdd') center / 60% no-repeat;
 		transition: all 0.1s ease;
 
 		@media (hover) {
 			&:hover {
 				width: 50px;
 				box-shadow: 0px 0px 20px rgba(255, 219, 71, 0.5), indet 0 0 0 1px #fff;
-				background: #fdcc06 url('../../../../img/svg/ProductAddHover.svg') calc(50% + 1px)
-					calc(50% - 2px) no-repeat;
-				background-size: 50% 50%;
+				background: #fdcc06 url('../../../../img/svg/icons.svg#productHover') center / contain no-repeat;
+				background-size: 50%;
 			}
 		}
 		&:active {
 			width: 50px;
 			box-shadow: 0px 0px 20px rgba(255, 219, 71, 0.5), indet 0 0 0 1px #fff;
-			background: #fdcc06 url('../../../../img/svg/ProductAddHover.svg') calc(50% + 1px)
-				calc(50% - 2px) no-repeat;
-			background-size: 80% 80%;
+			background: #fdcc06 url('../../../../img/svg/icons.svg#productHover') center / contain no-repeat;
+			background-size: 75%;
 		}
 	}
 }

@@ -8,12 +8,11 @@ import img4 from '../../../../img/pages//main/GalleryInst4.webp'
 import img5 from '../../../../img/pages//main/GalleryInst5.webp'
 import img6 from '../../../../img/pages//main/GalleryInst6.webp'
 import imgS from '../../../../img/pages//main/Gallery-small.webp'
-import imgInst from '../../../../img/svg/instWhite.svg'
 import { useContext } from 'react'
 import ProductsContext from '../../../../context/ProductsContext'
 
 const Galery = () => {
-	const {contacts} = useContext(ProductsContext)
+	const { contacts } = useContext(ProductsContext)
 	const items = [img1, img2, img3, img4, img5, img6, img1, img2, img3, img4, img5, img6]
 
 	const imgList = items.map((item, index) => (
@@ -29,10 +28,7 @@ const Galery = () => {
 					<div className={s.gallery__back_flex}>{imgList}</div>
 				</div>
 				<a href={contacts.inst} target='_blank' className={s.label}>
-					<span>
-						<img src={imgInst} alt='' />
-						@primepizza
-					</span>
+					@primepizza
 				</a>
 			</div>
 		</article>

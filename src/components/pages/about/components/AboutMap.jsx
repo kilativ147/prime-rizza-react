@@ -1,11 +1,7 @@
 import s from './AboutMap.module.scss'
 import 'react-lazy-load-image-component/src/effects/blur.css'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
-import imgLogo from '../../../../img/Logo.webp'
-import imgEmail from '../../../../img/svg/email.svg'
-import imgAddress from '../../../../img/svg/address.svg'
-import imgPhone from '../../../../img/svg/phone.svg'
-import imgTime from '../../../../img/svg/clock.svg'
+
 import { useContext } from 'react'
 import ProductsContext from '../../../../context/ProductsContext'
 
@@ -27,26 +23,18 @@ const AboutMap = () => {
 				/>
 			</a>
 			<div className={s.map__content}>
-				<div className={s.map__logo}>
-					<img src={imgLogo} alt='Logo' />
-				</div>
+				<div className={s.map__logo}></div>
 				<address className={s.map__contacts_flex}>
-					<a className={s.map__contact} href={contacts.map} target='_blank'>
-						<img src={imgAddress} alt='address' />
-						<span>{contacts.address}</span>
+					<a className={`${s.map__contact} ${s.map__contact_address}`} href={contacts.map} target='_blank'>
+						{contacts.address}
 					</a>
-					<a className={s.map__contact} href={`emailto:${contacts.email}`}>
-						<img src={imgEmail} alt='email' />
-						<span>{contacts.email}</span>
+					<a className={`${s.map__contact} ${s.map__contact_email}`} href={`emailto:${contacts.email}`}>
+						{contacts.email}
 					</a>
-					<a className={s.map__contact} href={`tel:+38${contacts.phone}`}>
-						<img src={imgPhone} alt='phone' />
-						<span>{numberView}</span>
+					<a className={`${s.map__contact} ${s.map__contact_phone}`} href={`tel:+38${contacts.phone}`}>
+						{numberView}
 					</a>
-					<p className={s.map__contact}>
-						<img src={imgTime} alt='time' />
-						<span>{contacts.time}</span>
-					</p>
+					<p className={`${s.map__contact} ${s.map__contact_clock}`}>{contacts.time}</p>
 				</address>
 			</div>
 		</section>

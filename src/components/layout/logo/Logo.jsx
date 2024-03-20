@@ -1,5 +1,4 @@
 import s from './Logo.module.scss'
-import imgLogo from '../../../img/Logo.webp'
 import { NavLink } from 'react-router-dom'
 
 const Logo = ({ handleMenuState, classComponent }) => {
@@ -11,9 +10,7 @@ const Logo = ({ handleMenuState, classComponent }) => {
 		'footer': `${s.logo} ${s.logo__footer}`,
 	}
 	return (
-		<NavLink to={'/'} className={classVar[classComponent]} onClick={handleClick}>
-			<img src={imgLogo} alt='' />
-		</NavLink>
+		<NavLink to={'/'} className={classVar[classComponent]} onClick={handleClick}></NavLink>
 	)
 }
 

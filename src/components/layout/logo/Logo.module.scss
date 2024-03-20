@@ -1,5 +1,6 @@
 .logo {
 	transition: all 0.2s ease;
+	background: url('../../../img/Logo.webp') center / contain no-repeat;
 	@media (hover) {
 		&:hover {
 			filter: drop-shadow(0 0 5px rgb(255, 208, 0));
@@ -26,5 +27,7 @@
 		}
 	}
 	&__footer {
+		height: 80px;
+		width: 250px;
 	}
 }

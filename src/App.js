@@ -11,6 +11,7 @@ const Order = lazy(() => import('./components/pages/order/Order'))
 const Promotional = lazy(() => import('./components/pages/promotional/Promotional'))
 const Delivery = lazy(() => import('./components/pages/delivery/Delivery'))
 const About = lazy(() => import('./components/pages/about/About'))
+const NotFound = lazy(() => import('./components/pages/notFound/NotFound'))
 
 const App = () => {
 	const [isLoading, setIsLoading] = useState(true)
@@ -46,6 +47,7 @@ const App = () => {
 					/>
 					<Route path='/delivery' element={<Delivery setIsLoading={setIsLoading} />} />
 					<Route path='/about' element={<About setIsLoading={setIsLoading} />} />
+					<Route path='*' element={<NotFound setIsLoading={setIsLoading} />} />
 				</Route>
 			</Routes>
 		</div>

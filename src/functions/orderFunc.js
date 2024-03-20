@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useContext } from 'react'
-import ProductsContext from '../../../context/ProductsContext'
+import ProductsContext from '../context/ProductsContext'
 
 const orderFunc = async (
 	cartList,
