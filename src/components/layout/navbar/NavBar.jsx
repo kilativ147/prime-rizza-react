@@ -12,7 +12,7 @@ const NavBar = ({ handleMenuState, classComponent }) => {
 	}
 	return (
 		<nav className={classVar[classComponent]}>
-			<NavLink to='/promotional' className={`${classVar[classComponent]} ${s.link}`} onClick={handleClick}>
+			<NavLink to='/promotionals' className={`${classVar[classComponent]} ${s.link}`} onClick={handleClick}>
 				Акції
 			</NavLink>
 			<NavLink to='/delivery' className={`${classVar[classComponent]} ${s.link}`} onClick={handleClick}>

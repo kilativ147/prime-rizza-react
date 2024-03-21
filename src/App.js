@@ -41,7 +41,7 @@ const App = () => {
 					</Route>
 					<Route path='/order' element={<Order setIsLoading={setIsLoading} />} />
 					<Route
-						path='/promotional'
+						path='/promotionals'
 						element={<Promotional setIsLoading={setIsLoading} isLoading={isLoading} />}
 					/>
 					<Route path='/delivery' element={<Delivery setIsLoading={setIsLoading} />} />
