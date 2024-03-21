@@ -2,22 +2,29 @@ import s from './Form.module.scss'
 import React, { useState } from 'react'
 import formFunc from '../../../functions/FormFunc'
 
-const Form = ({ setLoader }) => {
+const Form = ({ setIsLoading }) => {
 	const [userName, setUserName] = useState('')
 	const [userPhone, setUserPhone] = useState('')
 	const [userEmail, setUserEmail] = useState('')
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
-		setLoader(true)
-		const send = formFunc(userName, setUserName, userPhone, setUserPhone, userEmail, setUserEmail)
+		setIsLoading(true)
+		const send = await formFunc(
+			userName,
+			setUserName,
+			userPhone,
+			setUserPhone,
+			userEmail,
+			setUserEmail,
+		)
 		if (send !== false) {
 			setUserName('')
 			setUserPhone('')
 			setUserEmail('')
 			console.log('redirect')
 			setTimeout(() => {
-				setLoader(false)
+				setIsLoading(false)
 			}, 500)
 			alert('Ваш запит надіслано')
 		} else console.log('error')

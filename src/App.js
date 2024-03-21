@@ -14,15 +14,14 @@ const About = lazy(() => import('./components/pages/about/About'))
 const NotFound = lazy(() => import('./components/pages/notFound/NotFound'))
 
 const App = () => {
-	const [isLoading, setIsLoading] = useState(true)
+	const [isLoading, setIsLoading] = useState(false)
+	
 	// isLoading ? document.body.classList.add('_loading') : document.body.classList.remove('_loading')
-
 	// const location = useLocation()
 	// useEffect(() => {
 	// 	const handleLoad = () => {
 	// 		setIsLoading(false)
 	// 		console.log('change page');
-
 	// 	}
 	// 	window.addEventListener('load', handleLoad)
 	// 	return () => window.removeEventListener('load', handleLoad) // Прибираємо обробник події при розміщенні компонента
@@ -30,9 +29,9 @@ const App = () => {
 
 	return (
 		<div className='wraper'>
-			{/* {isLoading && <Loader />} */}
+			{isLoading && <Loader />}
 			<Routes>
-				<Route path='/' element={<Layout />}>
+				<Route path='/' element={<Layout setIsLoading={setIsLoading} />}>
 					<Route path='/' element={<MainPage />}>
 						<Route path='/' element={<ProductsList list={'pizza'} />} />
 						<Route path='pizza' element={<ProductsList list={'pizza'} />} />

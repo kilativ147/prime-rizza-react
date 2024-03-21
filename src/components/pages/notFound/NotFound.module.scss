@@ -1,0 +1,23 @@
+.notfound {
+	padding: clamp(20px, 5vh, 100px) 20px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	&__img {
+		width: clamp(300px, 90vw, 700px);
+		height: clamp(200px, 50vh, 700px);
+		aspect-ratio: 1;
+		background: url('../../../img/pages/notFound/404.webp') center / contain no-repeat;
+	}
+	&__title {
+		font-size: clamp(1.3rem, 6vw, 3rem);
+		line-height: 1;
+		color: #ffd900;
+		text-align: center;
+		text-wrap: pretty;
+		text-shadow: 1px 2px 3px #a9a8a8;
+	}
+}

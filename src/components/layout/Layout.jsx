@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom'
 import ScrollToTop from './../../functions/ScrollToTop'
 import { Suspense } from 'react'
 
-const Layout = () => {
+const Layout = ({ setIsLoading }) => {
 	return (
 		<>
 			<Header />
@@ -17,7 +17,7 @@ const Layout = () => {
 					<Outlet />
 				</Suspense>
 			</main>
-			<Form />
+			<Form setIsLoading={setIsLoading} />
 			<Footer />
 		</>
 	)

@@ -6,7 +6,7 @@ import TableItem from './TableItem'
 import orderFunc from '../../../functions/orderFunc'
 import { NavLink, useNavigate } from 'react-router-dom'
 
-const Order = ({ setLoader }) => {
+const Order = ({ setIsLoading }) => {
 	const [userName, setUserName] = useState('')
 	const [userPhone, setUserPhone] = useState('')
 	const [userEmail, setUserEmail] = useState('')
@@ -37,7 +37,7 @@ const Order = ({ setLoader }) => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
-		setLoader(true)
+		setIsLoading(true)
 		const send = await orderFunc(
 			cartList,
 			productsList,
@@ -61,7 +61,7 @@ const Order = ({ setLoader }) => {
 			console.log('redirect')
 
 			setTimeout(() => {
-				setLoader(false)
+				setIsLoading(false)
 				navigate('/', { replace: true })
 			}, 500)
 			alert('Ваше замовлення надіслано')

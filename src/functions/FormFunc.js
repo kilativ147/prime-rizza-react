@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-const callbackFunc = (userName, userPhone, userEmail) => {
-  const serviceId = 'service_5smz8zb'
-  const templateId = 'template_dpm1qfh'
-  const publicKey = 'P2RJ1J1xECbk9Ml93'
+const callbackFunc = async (userName, userPhone, userEmail) => {
+	const serviceId = 'service_5smz8zb'
+	const templateId = 'template_dpm1qfh'
+	const publicKey = 'P2RJ1J1xECbk9Ml93'
 
 	const styles = {
 		mailMessage:
@@ -24,32 +24,28 @@ const callbackFunc = (userName, userPhone, userEmail) => {
 	const ownerContacts = contactsLinks.join(' | ')
 	const ps = `<p style="${styles.ps}">Повідомлення має інформаційний характер. Сайт слугує елементом портфоліо та не надає ніяких послуг.</p>`
 
-	const handleSubmit = async () => {
-		const data = {
-			service_id: serviceId,
-			template_id: templateId,
-			user_id: publicKey,
-			template_params: {
-				customer_name: userName,
-				customer_phone: userPhone,
-				customer_email: userEmail,
-				from_name: ownerName,
-				title,
-				message: mailMessage,
-				subtitle,
-				from_contacts: ownerContacts,
-				ps,
-			},
-		}
-
-		try {
-			await axios.post('https://api.emailjs.com/api/v1.0/email/send', data)
-			return true
-		} catch (error) {
-			return false
-		}
+	const data = {
+		service_id: serviceId,
+		template_id: templateId,
+		user_id: publicKey,
+		template_params: {
+			customer_name: userName,
+			customer_phone: userPhone,
+			customer_email: userEmail,
+			from_name: ownerName,
+			title,
+			message: mailMessage,
+			subtitle,
+			from_contacts: ownerContacts,
+			ps,
+		},
 	}
-	
-  handleSubmit()
+
+	try {
+		await axios.post('https://api.emailjs.com/api/v1.0/email/send', data)
+		return true
+	} catch (error) {
+		return false
+	}
 }
 export default callbackFunc

@@ -25,7 +25,7 @@ const Footer = () => {
 						<a href={contacts.map} target='_blank' className={s.footer__contacts_address}>
 							{contacts.address}
 						</a>
-						<a href={`emailto:${contacts.email}`} className={s.footer__contacts_email}>
+						<a href={`mailto:${contacts.email}`} className={s.footer__contacts_email}>
 							{contacts.email}
 						</a>
 						<a href={`tel:+38${contacts.phone}`} className={s.footer__contacts_phone}>

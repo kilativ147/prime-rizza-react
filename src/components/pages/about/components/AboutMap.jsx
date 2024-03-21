@@ -28,7 +28,7 @@ const AboutMap = () => {
 					<a className={`${s.map__contact} ${s.map__contact_address}`} href={contacts.map} target='_blank'>
 						{contacts.address}
 					</a>
-					<a className={`${s.map__contact} ${s.map__contact_email}`} href={`emailto:${contacts.email}`}>
+					<a className={`${s.map__contact} ${s.map__contact_email}`} href={`mailto:${contacts.email}`}>
 						{contacts.email}
 					</a>
 					<a className={`${s.map__contact} ${s.map__contact_phone}`} href={`tel:+38${contacts.phone}`}>
