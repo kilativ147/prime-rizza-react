@@ -7,7 +7,7 @@ const MediaItem = ({ title, link, subtitle }) => {
 		'Email': `${s.item__img} ${s.item__img_email}`,
 	}
 	return (
-		<a href={link} className={s.item} target='_blank'>
+		<a role='link' aria-label={`Посилання на ${title}`} href={link} className={s.item} target='_blank'>
 			<div className={s.item__content}>
 				<div className={classVar[title]}></div>
 				<h4>{title}</h4>

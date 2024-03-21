@@ -68,20 +68,16 @@ const CartList = ({ changeVisibility, showList }) => {
 	return (
 		<aside className={classVisibilityA} ref={listRef}>
 			<div className={classVisibility} ref={listAreaRef}>
-				<button type='button' className={s.basket__close} onClick={() => changeVisibility(false)}>
+				<button role='button' aria-label='Закрити список товарів у корзині' type='button' className={s.basket__close} onClick={() => changeVisibility(false)}>
 					<RxCross2 />
 				</button>
-				{/* <form action='#' className={s.basket__form} onSubmit={handleSubmit}> */}
 				<form action='#' className={s.basket__form} >
 					<p className={s.basket__title}>Ваше замовлення</p>
 					<ul className={s.basket__list}>{cartItems}</ul>
 					<div className={s.basket__summ}>
 						сума: <span>{sum}</span> грн.
 					</div>
-					{/* <button className={s.basket__post} type='submit' value='Send'>
-						Підтвердити замовлення
-					</button> */}
-					<NavLink to='/order' className={s.basket__post}>
+					<NavLink role='link' aria-label='Посилання на сторінку підтвердження замовлення' to='/order' className={s.basket__post}>
 						Підтвердити замовлення
 					</NavLink>
 				</form>

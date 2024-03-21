@@ -68,7 +68,7 @@ const Form = ({ setIsLoading }) => {
 						placeholder='E-mail'
 						required
 					/>
-					<button className={s.form__button} type='submit' value='Send'>
+					<button role='button' aria-label='Відправка форми заповнення' className={s.form__button} type='submit' value='Send'>
 						Чекаю дзвінка!
 					</button>
 				</div>

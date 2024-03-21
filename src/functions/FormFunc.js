@@ -17,9 +17,9 @@ const callbackFunc = async (userName, userPhone, userEmail) => {
 	const mailMessage = `<p style="${styles.mailMessage}">Ми отримали Ваш запит на зворотній зв'язок за номером <b>${userPhone}</b>, очікуйте на дзвінок найближчим часом!</p>`
 	const subtitle = `З повагою, ${ownerName}`
 	const contactsLinks = [
-		`<a href="prime-pizza.netlify.app"  target="_blank" style='${styles.contactStyle}'>PrimePizza</a>`,
-		`<a href="https://github.com/kilativ147"  target="_blank" style='${styles.contactStyle}'>Github</a>`,
-		`<a href="https://www.linkedin.com/in/vitalii-yushchuk/"  target="_blank" style='${styles.contactStyle}'>LinkedIn</a>`,
+		`<a role='link' aria-label='Посидання на сайт проекту' href="prime-pizza.netlify.app"  target="_blank" style='${styles.contactStyle}'>PrimePizza</a>`,
+		`<a role='link' aria-label='Посидання на GitHub репозиторій' href="https://github.com/kilativ147"  target="_blank" style='${styles.contactStyle}'>Github</a>`,
+		`<a role='link' aria-label='Посидання на LinkedIn' href="https://www.linkedin.com/in/vitalii-yushchuk/"  target="_blank" style='${styles.contactStyle}'>LinkedIn</a>`,
 	]
 	const ownerContacts = contactsLinks.join(' | ')
 	const ps = `<p style="${styles.ps}">Повідомлення має інформаційний характер. Сайт слугує елементом портфоліо та не надає ніяких послуг.</p>`

@@ -12,13 +12,31 @@ const NavBar = ({ handleMenuState, classComponent }) => {
 	}
 	return (
 		<nav className={classVar[classComponent]}>
-			<NavLink to='/promotionals' className={`${classVar[classComponent]} ${s.link}`} onClick={handleClick}>
+			<NavLink
+				role='link'
+				aria-label='Посидання на сторінку "Акції"'
+				to='/promotionals'
+				className={`${classVar[classComponent]} ${s.link}`}
+				onClick={handleClick}
+			>
 				Акції
 			</NavLink>
-			<NavLink to='/delivery' className={`${classVar[classComponent]} ${s.link}`} onClick={handleClick}>
+			<NavLink
+				role='link'
+				aria-label='Посидання на сторінку "Доставка'
+				to='/delivery'
+				className={`${classVar[classComponent]} ${s.link}`}
+				onClick={handleClick}
+			>
 				Доставка
 			</NavLink>
-			<NavLink to='/about' className={`${classVar[classComponent]} ${s.link}`} onClick={handleClick}>
+			<NavLink
+				role='link'
+				aria-label='Посидання на сторінку "Про нас"'
+				to='/about'
+				className={`${classVar[classComponent]} ${s.link}`}
+				onClick={handleClick}
+			>
 				Про нас
 			</NavLink>
 		</nav>

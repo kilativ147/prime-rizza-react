@@ -55,9 +55,9 @@ const orderFunc = async (
 	const subtitle = `З повагою, <b>${ownerName}</b>`
 	//% CONTACTS
 	const contactsLinks = [
-		`<a href="prime-pizza.netlify.app"  target="_blank" ${styles.contactStyle}>PrimePizza</a>`,
-		`<a href="https://github.com/kilativ147"  target="_blank" ${styles.contactStyle}>Github</a>`,
-		`<a href="https://www.linkedin.com/in/vitalii-yushchuk/"  target="_blank" ${styles.contactStyle}>LinkedIn</a>`,
+		`<a role='link' aria-label='Посидання на сайт проекту' href="prime-pizza.netlify.app"  target="_blank" ${styles.contactStyle}>PrimePizza</a>`,
+		`<a role='link' aria-label='Посидання на GitHub репозиторій' href="https://github.com/kilativ147"  target="_blank" ${styles.contactStyle}>Github</a>`,
+		`<a role='link' aria-label='Посидання на LinkedIn' href="https://www.linkedin.com/in/vitalii-yushchuk/"  target="_blank" ${styles.contactStyle}>LinkedIn</a>`,
 	]
 	const ownerContacts = contactsLinks.join(' | ')
 	const ps = `<p ${styles.ps}>Повідомлення має інформаційний характер. Сайт слугує елементом портфоліо та не надає ніяких послуг.</p>`

@@ -33,7 +33,7 @@ const Product = ({ id, title, image: img, description, price }) => {
 			<p className={s.item__price}>
 				<span>{price} грн.</span>
 			</p>
-			<button type='button' className={s.item__buy} onClick={handleClick}></button>
+			<button role='button' aria-label='Додати товар до кошику' type='button' className={s.item__buy} onClick={handleClick}></button>
 		</li>
 	)
 }

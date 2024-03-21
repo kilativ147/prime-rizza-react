@@ -10,7 +10,13 @@ const Logo = ({ handleMenuState, classComponent }) => {
 		'footer': `${s.logo} ${s.logo__footer}`,
 	}
 	return (
-		<NavLink to={'/'} className={classVar[classComponent]} onClick={handleClick}></NavLink>
+		<NavLink
+			role='link'
+			aria-label='Посидання на головну сторінку'
+			to={'/'}
+			className={classVar[classComponent]}
+			onClick={handleClick}
+		></NavLink>
 	)
 }
 

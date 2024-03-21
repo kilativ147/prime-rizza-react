@@ -80,7 +80,7 @@ const Order = ({ setIsLoading }) => {
 
 	return (
 		<section className={s.order + ' __container'}>
-			<NavLink to='/' className={s.order__back}>
+			<NavLink role='link' aria-label='Посидання на головну сторінку' to='/' className={s.order__back}>
 				<span>
 					<FaLongArrowAltLeft />
 				</span>{' '}
@@ -157,7 +157,13 @@ const Order = ({ setIsLoading }) => {
 						placeholder='Коментар до замовлення...'
 					></textarea>
 
-					<button type='submit' value='Send' className={s.button}>
+					<button
+						role='button'
+						aria-label='Підтвердження замовлення'
+						type='submit'
+						value='Send'
+						className={s.button}
+					>
 						Підтвердження замовлення
 					</button>
 				</form>

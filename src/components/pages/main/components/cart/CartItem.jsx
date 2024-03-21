@@ -43,16 +43,16 @@ const CartItem = ({ id, img, title, count, price }) => {
 				<img src={img} alt={title} />
 			</div>
 			<p className={s.title}>{title}</p>
-			<button type='button' className={s.button} onClick={onMinusHandle}>
+			<button role='button' aria-label='Зменшити кількість на 1' type='button' className={s.button} onClick={onMinusHandle}>
 				<CiSquareMinus />
 			</button>
 			<p className={s.count}>{count}</p>
-			<button type='button' className={s.button} onClick={onPlusHandle}>
+			<button role='button' aria-label='Збільшити кількість на 1' type='button' className={s.button} onClick={onPlusHandle}>
 				<CiSquarePlus />
 			</button>
 			<p className={s.summ}>{sum}</p>
 			<span className={s.currency}> грн.</span>
-			<button type='button' className={s.button} onClick={onDeleteHandle}>
+			<button role='button' aria-label='Видалити товар з корзини' type='button' className={s.button} onClick={onDeleteHandle}>
 				<RxCross2 />
 			</button>
 		</li>
