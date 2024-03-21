@@ -59,21 +59,18 @@
 		span {
 			width: 100%;
 			height: 100%;
-			img {
-				display: block;
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				transition: all 0.3s ease !important;
-			}
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: all 0.3s ease !important;
 		}
 		@media (hover) {
 			&:hover {
 				border-radius: 0px;
-
 				img {
 					scale: 1.1;
-					transition: all 0.3s ease;
 				}
 			}
 		}

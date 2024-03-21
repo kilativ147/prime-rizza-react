@@ -27,7 +27,13 @@ const Galery = () => {
 				<div className={s.gallery__back}>
 					<div className={s.gallery__back_flex}>{imgList}</div>
 				</div>
-				<a href={contacts.inst} target='_blank' className={s.label}>
+				<a
+					role='link'
+					aria-label='Посидання на сторінку в Instagram'
+					href={contacts.inst}
+					target='_blank'
+					className={s.label}
+				>
 					@primepizza
 				</a>
 			</div>

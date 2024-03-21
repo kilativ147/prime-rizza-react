@@ -10,13 +10,6 @@
 	align-items: center;
 	font-size: 16px;
 
-	@media (max-width: 500px) {
-		grid-template-columns: 0px 1fr 15px 20px 15px 40px 30px 10px;
-	}
-
-	@media  (max-height: 400px) {
-		grid-template-columns: 0px 1fr 15px 20px 15px 40px 30px 10px;
-	}
 }
 .img {
 	height: 75px;
@@ -52,4 +45,12 @@
 	text-align: right;
 }
 .currency {
+}
+@media (max-width: 800px) or (max-height: 400px) {
+	.item {
+		grid-template-columns: 1fr 15px 20px 15px 40px 30px 10px;
+	}
+	.img {
+		display: none;
+	}
 }

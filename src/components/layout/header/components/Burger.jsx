@@ -6,7 +6,13 @@ const Burger = ({ handleMenuState,menuState }) => {
 	}
 const burgerClassName = menuState ? `${s.burger} ${s._active}` : s.burger
 	return (
-		<button className={burgerClassName} onClick={handleOpenMenu} type='button'>
+		<button
+			role='button'
+			aria-label='Відкриття бургер-меню'
+			className={burgerClassName}
+			onClick={handleOpenMenu}
+			type='button'
+		>
 			<span></span>
 		</button>
 	)

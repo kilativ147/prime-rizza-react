@@ -8,7 +8,12 @@ const Contacts = () => {
 	return (
 		<address className={s.header__adress}>
 			<p className={s.header__worktime}>{contacts.time}</p>
-			<a href={`tel:+38${contacts.phone}`} className={s.header__phone}>
+			<a
+				role='link'
+				aria-label='Посидання на телефонний дзвінок'
+				href={`tel:+38${contacts.phone}`}
+				className={s.header__phone}
+			>
 				{`+38 (${contacts.phone.slice(0, 3)})
 				${contacts.phone.slice(3, 6)}-${contacts.phone.slice(6, 8)}-${contacts.phone.slice(8)}`}
 			</a>

@@ -16,12 +16,19 @@ const CartIcon = ({ changeVisibility }) => {
 	const classVisibility = count > 0 ? `${s.cart} ${s._active}` : `${s.cart}`
 
 	return (
-		<aside className={classVisibility} onClick={()=>changeVisibility(true)} style={{ userSelect: 'none' }}>
-			<div className={s.cart__icon}>
+		<button
+			role='button'
+			aria-label='Відкрити список товарів у корзині'
+			type='burron'
+			className={classVisibility}
+			onClick={() => changeVisibility(true)}
+			style={{ userSelect: 'none' }}
+		>
+			{/* <div className={s.cart__icon}> */}
 				<IoIosCart />
-			</div>
+			{/* </div> */}
 			<div className={s.cart__count}>{count}</div>
-		</aside>
+		</button>
 	)
 }
 
